@@ -1,0 +1,123 @@
+<html>
+<head>
+  <title>Form태그 연습</title>
+</head>
+<body>
+  <h2>(양식)태그 연습</h2>
+  <!--
+    <form name="폼이름" method="전송방식" action="전송파일(서버에서 받는 파일명)"> 하나만 오면 네임안적어도됨 서버로 보내는 전송방식에 관한게 메소드
+      method : 전송방식
+        -get : 자료(값)를 URL을 통해서 전달
+        -post : HTTP의 Header에 정보를 함께 전달시켜주는 방식
+      
+    </form>
+  -->
+  <div>1. 안녕하세요</div>
+  <div>2. 안녕하세요</div>
+  <div>3. 안녕하세요</div>
+  <div>4. 안녕하세요</div>
+  <span>1. 방가</span>
+  <span>2. 방가</span>
+  <span>3. 방가</span>
+  <span>4. 방가</span>
+  <hr />
+  <h2>회원가입</h2>
+  <form method="post">
+    <div><label for="irum">성명 : <input type="text" name="irum" id="irum" value="홍길동" size="10" autofocus /></label></div>
+    <div><label for="age">나이 : <input type="number" name="age" id="age" value="20" min="0" max="150" step="5"/></label></div>
+    <div><label for="mid">아이디 : <input type="text" name="irum" id="mid" size="10" placeholder="아이디를 입력하세요" maxlength="10" /></label></div>
+    <div><label for="pwd">비밀번호 : <input type="password" name="pwd" id="pwd" placeholder="비밀번호를 입력하세요" /></label></div>
+    <div> 
+      성별 : 
+      <input type="radio" name="gender" />남자
+      <input type="radio" name="gender" checked/>여자
+    </div>
+    <div>
+      소지하고 있는 카드
+      <input type="checkbox" name="card" />삼성카드
+      <input type="checkbox" name="card" checked />LG카드
+      <input type="checkbox" name="card" />국민카드
+      <input type="checkbox" name="card" />BC카드
+      <input type="checkbox" name="card" />농협카드
+    </div>
+    <div>생일 : <input type="date" name="birthday" value="2024-09-24" /> </div>
+    <div> 출근시간 : <input type="time" name="startOffice" /></div>
+    <div> 회의시간 : <input type="datetime-local" name="startOffice1" value="2024-09-25T18:20" /></div>
+    <div> 회의시간2 : <input type="datetime-local" name="startOffice1" value="2024-09-25T18:20" readonly /></div>
+    <div>이메일 : <input type="email" name="email" /></div>
+    <div>전화번호 : <input type="tel" name="tel" /></div>
+    <div>
+      직업 : 
+      <select name="job" id="job">
+        <option>학생</option>
+        <option>회사원</option>
+        <option>공무원</option>
+        <option>의사</option>
+        <option>변호사</option>
+        <option>프리랜서</option>
+        <option selected>기타</option>
+      </select>
+    </div>
+    <div>
+      취미 : 
+      <select name="hobby" id="hobby" size="5" multiple>
+        <option value="1">등산</option>
+        <option value="2">수영</option>
+        <option value="3">바둑</option>
+        <option value="4">바이크</option>
+        <option value="5" selected>영화감상</option>
+        <option value="6">낚시</option>
+        <option value="7">음악감상</option>
+      </select>
+    </div>
+    <div>
+      -옵션그룹<br />
+      <select name="schoolClass">
+        <optgroup label="공과대학"
+          <option>컴퓨터공학과</option>
+          <option>토목공학과</option>
+          <option>건축공학과</option>
+          <option>전자공학과</option>
+        </optgroup>
+        <optgroup label="인문대학">
+          <option>영문학과</option>
+          <option>국문학과</option>
+          <option>서반어학과</option>
+        </optgroup>
+      </select>
+    </div>
+    <div>첨부파일 : <input type="file" name="nFile" /></div>
+    <div>
+      사용량<br />
+      <meter value="65" min="0" max="100"></meter><br />
+      <meter value="65" min="0" max="200"></meter><br />
+      <meter value="10" low="50" high="150" min="0" max="100"></meter><br />
+    </div>
+    <div>
+      - 범위 : range <br />
+      소리크기1 : <input type="range" name="volume" /><br />
+      소리크기2 : <input type="range" name="volume" value="30" /><br />
+      소리크기3 : <input type="range" name="volume" value="30" step="20" /><br />
+      소리크기4 : <input type="range" name="volume" value="30" step="20" min="0" max="200"  /><br />
+    </div>
+    <div>
+      -진행상황<br />
+      진행중 : <progress></progress><br />
+      진행중 10초경과(100초기준) : <progress value="10" max="100"></progress><br />
+    </div>
+    <div>
+      자기소개
+      <textarea rows="5" cols="50" name="content" id="content"></textarea>
+    </div>
+    <div>
+      <input type="submit" />
+      <input type="submit" value="전송"/>
+      <input type="reset" value="취소"/>
+      <input type="button" value="등록하기"/>
+      <button>회원가입</button>
+      <button type="button">회원가입2</button>
+      <button type="reset">가입취소</button>
+    </div>
+  </form>
+</body>
+</html>

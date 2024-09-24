@@ -1,0 +1,85 @@
+<html>
+<head>
+  <title>회원가입</title>
+</head>
+<body>
+<p><br /></p>
+  <h2 align="center">회원가입</h2>
+  <form>
+    <table border="1" cellpadding="10px" cellspacing="0px" align="center">
+      <tr>
+        <th><label for="mid">아이디</th>
+        <td><input type="text" name="mid" id="mid" maxlength="20" required placeholder="아이디를 입력하세요" autofocus /></label></td>
+      </tr>
+      <tr>
+        <th><label for="pwd">비밀번호</th>
+        <td><input type="password" name="pwd" id="pwd" required placeholder="비밀번호를 입력하세요" /></label></td>
+      </tr>
+      <tr>
+        <th><label for="name">성명</th>
+        <td><input type="text" name="name" id="name" placeholder="성명을 입력하세요" /></label></td>
+      </tr>
+      <tr>
+        <th><label for="age">나이</th>
+        <td><input type="number" name="age" id="age" size="3" min="1" max="100" /></label></td>
+      </tr>
+      <tr>
+        <th>성별</th>
+        <td>
+          <label for="gender1"><input type="radio" name="gender" id="gender1" />남자</label>
+          <label for="gender2"><input type="radio" name="gender" id="gender2" checked />여자</label>
+        </td>
+      </tr>
+      <tr>
+        <th>취미</th>
+        <td>
+           <label for="hobby1"><input type="checkbox" name="hobby" id="hobby1" />등산</label>
+           <label for="hobby2"><input type="checkbox" name="hobby" id="hobby2" />낚시</label>
+           <label for="hobby3"><input type="checkbox" name="hobby" id="hobby3" />수영</label>
+           <label for="hobby4"><input type="checkbox" name="hobby" id="hobby4" />음악감상</label>
+           <label for="hobby5"><input type="checkbox" name="hobby" id="hobby5" />바이크</label>
+        </td>
+      </tr>
+      <tr>
+        <th>직업1</th>
+          <td>
+          <select name="job1" id="job1" />
+            <option>학생</option>
+            <option>군인</option>
+            <option>공무원</option>
+            <option>회사원</option>
+            <option>자영업</option>
+            <option>프리랜서</option>
+            <option selected>기타</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>직업2</th>
+          <td>
+          <select name="job2" id="job2" size="5" multiple />
+            <option>학생2</option>
+            <option>군인2</option>
+            <option>공무원2</option>
+            <option>회사원2</option>
+            <option>자영업2</option>
+            <option>프리랜서2</option>
+            <option>기타2</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>첨부파일</th>
+        <td><input type="file" name="fName" id="fName"/></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="회원가입" />
+          <input type="reset" value="다시입력 " />
+          <input type="button" value="돌아가기" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
