@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t20.html(레이어)</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    /* 클래스는 공통적으로 사용하는거 하나는 아이디 */
+    /* div로 영역을 지정해주고 하는게 레이어 */
+    .item {
+      width: 200px;
+      height: 180px;
+      margin: 10px 0px;
+    }
+    #item1 {
+      background-color: aqua;
+    }
+    #item2 {
+      background-color: antiquewhite;
+      /* static 이 기본 */
+      position: absolute;
+      /* 왼쪽부터 이만큼 떨어져있다 아무것도 안준건 바닥에 있음*/
+      /* x y 기준 150씩 떨어져있다 */
+      left: 150px;
+      top: 150px;
+      /* 숫자를 바꿔서 위치를 바꾼다 */
+      z-index: 6;
+    }
+    #item3 {
+      background-color: teal;
+      position: absolute;
+      left: 250px;
+      top: 250px;
+      /* 아무것도 안주면 0 밑으로 감 0보다 큰걸 주면 위로 감 */
+      z-index: 5;
+    }
+    #item4 {
+      background-color: aquamarine;
+      width: 250px;
+      display: auto;
+      /* 위치 조정 fixed는 고정 absolute?*/
+      position: fixed;
+      left: 300px;
+      top: 100px;
+    }
+    #item5 {
+      background-color: bisque;
+    }
+    #item6 {
+      background-color: cornflowerblue;
+      /* 기준이 body 기준으로 된다 특히 바로 전단계 기존에 고정한거부터 어떤식으로 떨어지겠다 하는거*/
+      position: relative;
+      left: 100px;
+      top: 100px;
+    }
+    #item7, #item9, #item11 {
+      background-color: cadetblue;
+    }
+    #item8, #item10, #item12 {
+      background-color: chartreuse;
+    }
+    #top_arrow {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 위치를 바꿀때 여기 건들면 안되고 css를 건드려야함 -->
+  <h2><a name="top">레이어 연습하기</a></h2>
+  <div class="item" id="item1">1</div>
+  <div class="item" id="item2">2<a href="http://naver.com">2</a></div>
+  <div class="item" id="item3">3<a href="t19.html">2</a></div>
+  <div class="item" id="item4"><img src="../images/12.jpg" width="250px" /></div>
+  <div class="item" id="item5">5</div>
+  <div class="item" id="item6">6</div>
+  <div class="item" id="item7">7</div>
+  <div class="item" id="item8">8</div>
+  <div class="item" id="item9">9</div>
+  <div class="item" id="item10">10</div>
+  <div class="item" id="item11">11</div>
+  <div class="item" id="item12">12</div>
+  <a href="#top"><img src="../images/6.jpg" id="top_arrow" width="50px" height="50px" /></a>
+</body>
+</html>

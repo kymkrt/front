@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t23.html</title>
+  <!-- 구글폰트에서 가져옴 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
+  <style>
+    /* 줄간격 */
+    div {
+      line-height: 20px;
+    }
+    div.mbc {
+      font-family: "굴룸체", "궁서체", "돋음체";
+      border: 5px solid green;
+      /* 들여쓰기 pre 태그 있으면 작동안함 */
+      text-indent: 50px;
+    }
+    /* 전체로 다하고 싶으면 바디 태그에 넣으면 됨 */
+    div.kbs {
+    font-family: "Moirai One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    }
+    div#sbs {
+      border: 2px double red;
+      width: 400px;
+      text-indent: 40px;
+      /* 한글자 마다의 거리 */
+      letter-spacing: 4px;
+      /* 단어마다의 거리 스페이스가 기준 */
+      word-spacing: 20px;
+    }
+    /* 포인트나 픽셀이나 자기 하기 나름 */
+    /* 16px=1em */
+    /* 화면단위일때 px 반응형일경우 em 픽셀로하면 종횡비가 고정임 반응형일때 안바뀜*/
+    .f25 {
+      font-size: 12px;
+      color: red;
+    }
+    .e40 {
+      /* 기본사이즈가 크기 때문에 계산해서 넣어줘야 한다 12/16 이렇게는 안됨*/
+      font-size: 1.25em;
+      color: blue;
+    }
+    /* 작은 대문자 한글에는 적용안됨 */
+    h1 {
+      font-variant: small-caps;
+    }
+    #korea {
+      /* 오른쪽 아래 + 왼 위 - */
+      /* 글자에 그림자 인자여러개 들어감 =오른 아래 그림자크기 그림자색*/
+      text-shadow: 3px 3px 4px #444;
+    }
+  </style>
+</head>
+<body>
+  <h2>애국가</h2>
+  <pre>
+    <div class="mbc">
+      1절
+      <!-- span은 줄을 안바꿔서 여기 사용 -->
+      <span class="e40">동해물</span>과 <span class="f25">백두산</span>이 마르고 닳도록
+      하느님이 보우하사 우리나라 만세
+      무궁화 <span class="f25">삼천리</span> 화려강산
+      대한사람 대한으로 길이보전하세
+    </div>
+    <div class="kbs">
+      2절 
+      <span class="e40">남산</span>위에 저 <span class="f25">소나무</span> 철갑을 두른듯
+      바람서리 불변함은 우리 기상일세
+      <span class="f25">무궁화</span> 삼천리 화려강산 
+      대한사람 대한으로 길이보전하세
+    </div>
+    <div class="mbc">
+      3절
+      가을하늘 공활한데 높고구름없이
+      밝은달은 우리가슴 일편단심일세
+      무궁화 삼천리 화려강산 
+      대한사람 대한으로 길이보전하세
+    </div>
+    <div class="kbs">
+      4절
+      이 기상과 이맘으로 충성을 다하여
+      괴로우나 즐거우나 나라 사랑하세
+      무궁화 삼천리 화려강산 
+      대한사람 대한으로 길이보전하세
+    </div>
+  </pre>
+  <h1>Welcome to Korea!!</h1>
+  <h1 id="korea">한국에 오신것을 환영합니다</h1>
+  <div id="sbs">
+    4절
+    이 기상과 이맘으로 충성을 다하여
+    괴로우나 즐거우나 나라 사랑하세
+    무궁화 삼천리 화려강산 
+    대한사람 대한으로 길이보전하세
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t22.html</title>
+  <style>
+    #imgParent {
+      width: 500px;
+      /* 1. 좌우 2. 상하 3. 나머지 알아서 맞춰줘 auto 가운데? */
+      margin: 0 auto;
+      position: relative;
+    }
+    #sign {
+      /* 메뉴하고 반대 */
+      position: absolute;
+      color: blueviolet;
+      /* left: 20px;
+      top: 10px; */
+      right: 10px;
+      bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>그림에 글자 배치하기</h2>
+  <div id="imgParent">
+    <img src="../images/4.jpg" width="500px" id="imgChild" />
+    <div id="sign">__ 생일을 축하합니다. - 그린주식회사 - </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t24.html</title>
+  <style>
+    li {
+      /* css 리셋에 필수로 들어감 리스트 초기화 */
+      /* list-style: none; */
+      /* 이러면 리스트 자체도 다됨 */
+      /* list-style-type: square; */
+    }
+    ul li {list-style-type: square;}
+    /* ol li {list-style-type: ;} */
+    /* 들여쓰기 아웃사이드가 기본 */
+    /* li {list-style-position: outside;} */
+    li {list-style-position: inside;}
+    /* url은 무조건 경로 따옴표 써야함 */
+    /* 대문자 영어 */
+    ol li {list-style-type: upper-alpha;}
+  </style>
+</head>
+<body>
+  <h2>목록</h2>
+  <!-- 콘텐트 섹션 아티클(소단위주제) 헤더 -->
+  <section>
+    <article>
+      <div>
+        <ul>
+          <li>list1</li>
+          <li>list2</li>
+          <li>list3</li>
+          <li>list4</li>
+          <li>list5</li>
+        </ul>
+      </div>
+    </article>
+    <hr />
+    <article>
+      <div>
+        <ol>
+          <li>list1</li>
+          <li>list2</li>
+          <li>list3</li>
+          <li>list4</li>
+          <li>list5</li>
+        </ol>
+      </div>
+    </article>
+  </section>
+</body>
+</html>
