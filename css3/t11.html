@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t11.html(pseudo 선택자(:))</title>
+  <!-- 어떤 의사를 선택하겠다 -->
+  <style>
+    /* :뒤에 의사 */
+    h2:hover {
+      background-color: grey;
+    }
+    /* 링크걸린거에 대해서 */
+    :link {
+      font-size: 20px;
+      text-decoration: none;
+      font-weight: bolder;
+    }
+    /* 방문하고 왔을때 */
+    /* a:visited {  a를 붙여서 실제 이거에만 적용? */
+    :visited {
+      color: green;
+    }
+    /* 검정은 색을 안주는것 */
+    /* focus 초점이 갔을때 tab 키 누르면 보임 */
+    a:focus {
+      background-color: black;
+      color: #fff;
+    }
+    a:active {
+      color: red;
+    }
+    /* 여러개 지정할때 , 사용 */
+    input, button {
+      outline: none;
+      background-color: gold;
+    }
+    /* 한개만 다시하고 싶을때 속성사용해야함 */
+    /* input은 태그명이라 안들어감 []안에 속성값을 넣는것 */
+    /* 어러개 넣기도 가능 ,사용*/
+    [type="text"],[type="password"]  {
+      color: blueviolet;
+    }
+  </style>
+</head>
+<body>
+  <h2>Pseudo-Class Selector</h2>
+  <p>
+    <a href="">어디로 갈까요</a>
+  </p>
+  <form action="">
+    성명 : <input type="text" name="name"><br />
+    비밀번호 : <input type="password" name="pwd"><br />
+    <button>전송</button>
+  </form>
+</body>
+</html>

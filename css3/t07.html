@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t07.html(자손선택자)</title>
+  <!-- 자손선택자는 나를 기준으로 아래 모두에 적용? -->
+  <!--이렇게 자식 자손으로 하면 복잡해서 클래스가 편하긴 하다  -->
+  <style>
+    /* 이런걸 태그 선택자라 한다 태그 셀렉터 */
+    li {
+      background-color: aqua;
+    }
+    /* 이러면 안됨 */
+    /* ol li {
+      background-color: chocolate;
+    } */
+    /* 이렇게 주면 다됨 */
+    header nav ul ol li {
+      background-color: chocolate;
+    }
+    /* 자식인지 자손인지가 다름? */
+    /* 자손을 한것 */
+    header nav ol ul li {
+      background-color: chocolate;
+    }
+  </style>
+</head>
+<body>
+  <h2>자손선택자</h2>
+  <header>
+    <nav>
+      <ul>
+        <li>sub1</li>
+        <li>sub2</li>
+          <ol>
+            <li>subsub1</li>
+            <li>subsub2</li>
+            <li>subsub3</li>
+          </ol>
+        <li>sub3</li>
+        <li>sub4</li>
+      </ul>
+      <ol>
+        <li>sub11</li>
+        <li>sub12</li>
+          <ul>
+            <li>subsub1</li>
+            <li>subsub2</li>
+            <li>subsub3</li>
+          </ul>
+        <li>sub13</li>
+        <li>sub14</li>
+      </ol>
+    </nav>
+    <!-- 이건 적용안됨 경로가 다름 -->
+    <p>이곳은 p태그입니다</p>
+  </header>
+</body>
+</html>

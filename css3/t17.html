@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t17.html(테이블 응용)</title>
+  <style>
+    table {
+      /* 절대지정으로 크기줌 */
+      /* width: 300px;
+      height: 250px; */
+      /* 외 오 왼 아 다 50씩 들어간것 */
+      /* margin: 50px; */
+
+      margin: 50px 0px;
+      border-collapse: collapse; 
+    }
+    /* 한칸띄우는건 자손 ^자식 +동료(인접, 형제) */
+    th, td {
+      /* 순서 관계없음 */
+      border: 1px solid red;
+      text-align: center;
+      /* 상대지정으로 크기지정 픽셀로 줘야함*/
+      /* html5에서는 그냥 padding 그냥쓰면 상하좌우 4에서 cellpadding */
+      /* padding: 10px; */
+      /* 위 오른 아래 왼 순서 안주면 자동으로 반대편 값 */
+      /* padding: 10px 20px 30px; */
+      padding: 10px 20px 30px 40px;
+      /* 셀끼리의 간격 마진 셀 자체의 간격 패딩 */
+      /* 안쪽선간격없애기 여기에 써야함 */
+    }
+    th {
+      background-color:  burlywood;
+    }
+    /* 클래스니까 . */
+    .tr3 {
+      background-color: chocolate;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h2>테이블의 스타일 적용 연습1</h2>
+  <table>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+  </table>
+  <hr />
+  <h2>테이블의 스타일 적용 연습2</h2>
+  <table>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+    <tr class="tr3">
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>32</td>
+      <td>33</td>
+    </tr>
+  </table>
+  <hr />
+</body>
+</html>

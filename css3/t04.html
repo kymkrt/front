@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t04.html(스타일 우선순위)</title>
+  <!--인라인>내부>외부  -->
+  <!--내부 중에서도 가장 늦게 나온게 적용됨 순서대로 되기 때문에 css의 경우  -->
+  <link type="text/css" rel="stylesheet" href="t03.css" />
+  <style>
+    p {font-size: 10pt;}
+    div {font-size: 3pt;}
+    h1 {font-size: 20pt;}
+    /* p {font-size: 30pt;}  이렇게 똑같은게 2개 있는 경우는 거의 없다 대부분 잘못쓴거*/
+    /* 2개 이상인 경우 이렇게 표현 */
+    h4 {
+      color: rgb(173, 24, 121);
+      font-size: 20pt;
+    }
+    /* 이렇게도 작동한다 서로 다른 게 2번나옴*/
+    p {color: green;}
+  </style>
+</head>
+<body>
+  <h2>CSS 연습</h2>
+  <hr />
+  <p><font size="1">p태그 연습1</font></p>
+  <p>p태그 연습2</p>
+  <p>p태그 연습3</p>
+  <p>p태그 연습4</p>
+  <p>p태그 연습5</p>
+  <div>div태그 연습1</div>
+  <div>div태그 연습2</div>
+  <div>div태그 연습3</div>
+  <h1 style="font-size: 50pt;">제목 1</h1>
+  <h4>제목4</h4>
+</body>
+</html>

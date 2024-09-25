@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t10.html(속성선택자 [target] 이렇게 지정가능)</title>
+  <style>
+    /*전체 선택자 : * */
+    /* css reset 남들이 css를 건드렸을수도 있기 때문에 처음에 리셋하는게 좋다 */
+    /* * { 
+      font-size: 15pt;
+    }  */
+    /* 위에가 있으면 아래가 적용이 안됨 전체선택자가 힘이 세다 그래서 전체 선택자로 리셋함 */
+    body { 
+      font-size: 20pt;
+    } 
+    a {
+      /* 장식을 안주겠다 */
+      text-decoration: none;
+      color: blue;
+    }
+    /* 섀도우 Pseudo (의사) 선택자 */
+    /* 마우스 올렸을때*/
+    a:hover {
+      text-decoration: underline;
+      color: brown;
+    }
+    /* 반응이 오는순간 */
+    a:active {
+      text-decoration: overline;
+    }
+    /* 모두 */
+    [target] {
+      color: chartreuse;
+    }
+      /* 블랭크라 되어있는 타겟 */
+    [target="_blank"] {
+      text-decoration: line-through;
+    }
+    .inner_sm {
+      background-color: aqua;
+    }
+    /* ^를 붙이면 클래스 속성가진것중에서 =""이걸로 시작하는거에 다 적용하겠다 */
+    /* 섀도우 Pseudo (의사) 선택자 */
+    [class^="inner"] {
+      font-weight: bolder;
+    }
+  </style>
+</head> 
+<body>
+  <!-- 메뉴=<nav> -->
+  <nav>
+    <p>
+      <!-- # 쓰면 자기자신 -->
+      <a href="#" class="inner_sm">자신링크</a>
+      <!-- 타겟이라는 속성의 값 -->
+      <a href="http://www.naver.com" target="_blank">네이버</a>
+      <a href="http://www.daum.net" class="_blank">다음</a>
+      <!-- _self는 생략가능 -->
+      <a href="http://www.google.com" target="_self" class="inner_big">구글</a>
+    </p>
+
+  </nav>
+</body>
+</html>

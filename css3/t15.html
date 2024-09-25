@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t15.html</title>
+  <style>
+    /* 아이디는 # */
+    /* pseudo 클래스는 항상 붙여써야함 */
+    #policy:target {
+      background-color: green;
+      color: aliceblue;
+    }
+    /* 인풋태그의 체크드와 라벨?  형제선택자 같은 레벨임*/
+    input:checked+label {
+      background-color: aqua;
+    }
+    button:disabled {
+      background-color: #999;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h2>회원가입</h2>
+  <form name="myform" action="">
+    <p>
+      <input type="radio" name="gender" id="gender1"><label for="gender1">남자</label>
+      <input type="radio" name="gender" id="gender2"><label for="gender2">여자</label>
+    </p>
+    <!-- policy를 가진 아이디 -->
+    <p><a href="#policy">약관보기</a></p>
+    <p>
+      <input type="checkbox" name="agree" id="agree"/><label for="agree">동의</label>
+    </p>
+    <p>
+      <!-- readonly는 읽기전용 -->
+      <!-- disabled 선택불가 -->
+      <button disabled>전송</button>
+    </p>
+    <hr />
+    <!-- 이동한게 되서 뒤로가기 해야함 -->
+    <div id="policy">
+      <h2>약관안내</h2>
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t16.html</title>
+  <style>
+    header *:not(h2) { /*헤더에서 h2만 빼고*/
+      /* 선택 띄어쓰기 주의 위는 붙이고 아래는 띄운다 의미있는 선택자만 붙이기 */
+      color: green;
+    }
+    /* 이건 li* 아님 */
+    li:not(:last-child) {
+      background-color: silver;
+    }
+    </style>
+</head>
+<body>
+  <h1>부정선택자</h1>
+  <!-- h2을 제외한 나머지-->
+  <header>
+    <h1>로고</h1>
+    <h2>main title</h2>
+    <a href="">more...</a>
+    <p>p태그영역</p>
+  </header>
+  <ui>
+    <li>list item1</li>
+    <li>list item2</li>
+    <li>list item3</li>
+    <li>list item4</li>
+    <li>list item5</li>
+  </ui>
+</body>
+</html>

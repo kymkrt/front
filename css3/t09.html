@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t09.html(형제선택자: +)</title>
+  <style>
+    /* 레벨이 같은것 : 형제 */
+    h1+ul {
+      background-color: aqua;
+    }
+    /* ~을 쓰면 그 이후는 전부 형제로 쓴다 */
+    h2~ul {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>형제 선택자</h1>
+  <ul>
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+  </ul>
+  <h2>main Title</h2>
+  <ul>
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+  </ul>
+  <h3>sub Title</h3>
+  <ul>
+    <li>menu1</li>
+    <li>menu2</li>
+    <li>menu3</li>
+  </ul>
+</body>
+</html>

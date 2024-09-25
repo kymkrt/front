@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t14.html(위치지정선택자 : nth)</title>
+  <style>
+    /* 이렇게 위치지정하는게 있다 */
+    /*
+    li:first-child,
+    li:last-child,
+
+    li:nth-child(3) {
+      text-decoration: underline;
+    } 
+    */
+    /* 홀수하고 싶으면 2n+1 */
+    /* 2n+2 이건 똑같다*/
+    /* 3n하면 3의 배수 */
+    /* even 짝수 odd 홀수 */
+    /* 왜 td는 안될까? */
+    tr:nth-child(2n) {
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <table border>
+    <tr><td>list item1</td></tr>
+    <tr><td>list item2</td></tr>
+    <tr><td>list item3</td></tr>
+    <tr><td>list item4</td></tr>
+    <tr><td>list item5</td></tr>
+    <tr><td>list item6</td></tr>
+    <tr><td>list item7</td></tr>
+    <tr><td>list item8</td></tr>
+    <tr><td>list item9</td></tr>
+    <tr><td>list item10</td></tr>
+  </table>
+</body>
+</html>

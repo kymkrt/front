@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t06.html(클래스(자바하고는 다름) 클래스선택자, 자손클래스 )</title>
+  <link type="text/css" rel="stylesheet" href="t03.css" />
+  <style>
+    p {font-size: 10pt;}
+    div {font-size: 3pt;}
+    h1 {font-size: 20pt;}
+    h4 {
+      color: rgb(173, 24, 121);
+      font-size: 20pt;
+    }
+    #f25 {
+      font-size: 35pt;
+      color: red;
+    }
+    p {color: green;}
+    /* 아이디는 본문에 한번만나와야한다 이러면 명령은 수행되지만 자바스크립트 같은걸 쓸때 문제 생김 */
+    /* #f20 {font-size: 20px;} */
+    /* 그래도 동시에 뭔가 하고 싶다 그럴때 클래스 사용 */
+    /* 한개만 나올때는 id 여러개 (1개 이상 하나도 가능)일때는 class */
+    /* 이렇게 앞에 아무것도 없이. 쓰면 모든 클래스가 전부 적용 */
+    /* .f20 {font-size: 40px;} */
+    /* 이렇게 해주면 앞에 적힌것만 적용 */
+    p.f20 {font-size: 20px;}
+    /* 이렇게 안쪽으로 경로를 적어서 할수 있다 */
+    /* .f20 {font-size: 40px;} 이렇게 하면 그냥 안에 있는것도 다 적용 */
+    div p.f20 {
+      font-size: 20pt;
+      color: pink;
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS 연습</h2>
+  <hr />
+  <p><font size="1">p태그 연습1</font></p>
+  <p>p태그 연습2</p>
+  <p>p태그 연습3</p>
+  <p id="f25">p태그 연습4</p>
+  <p class="f20">p태그 연습5</p>
+  <p>p태그 연습6</p>
+  <p class="f20">p태그 연습7</p>
+  <div>div태그 연습1</div>
+  <div>div태그 연습2</div>
+  <div>div태그 연습3</div>
+  <h1 style="font-size: 50pt;">제목 1</h1>
+  <h4>제목4</h4>
+  <h4 class="f20">제목4</h4>
+  <div>
+    <p class="f20">안녕1</p>
+    <p>안녕2</p>
+    <p class="f20">안녕3</p>
+  </div>
+</body>
+</html>

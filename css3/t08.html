@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t08.html(자식선택자)</title>
+  <!-- 바로 아래가 자식 그 이후로는 자손 근데 그냥 클래스 쓰자 그게 편함 -->
+  <!--인접 선택자라는것도 있음  -->
+  <style>
+    li {
+      background-color: aqua;
+    }
+    header nav ul ol li {
+      background-color: chocolate;
+    }
+    /* 이러면 명확하게 지정 */
+    header > nav > ol > ul > li {
+      background-color: chocolate;
+    }
+    dd {
+      color: beige;
+      background-color: blueviolet;
+    }
+    /* 상속 꺽쇠는 자식일때 붙임 */
+    /* #cat > dd {  이러면 바로 밑에 dd가 없어서 안됨 */
+    /* #cat dd { 이러면 자손이라 가능 */
+    #cat > dl >dd { /*이러면 자식*/
+      color: beige;
+      background-color: blue;
+    }
+
+  </style>
+</head>
+<body>
+  <h2>자손선택자</h2>
+  <header>
+    <nav>
+      <ul>
+        <li>sub1</li>
+        <li>sub2</li>
+          <ol>
+            <li>subsub1</li>
+            <li>subsub2</li>
+            <li>subsub3</li>
+          </ol>
+        <li>sub3</li>
+        <li>sub4</li>
+      </ul>
+      <ol>
+        <li>sub11</li>
+        <li>sub12</li>
+          <ul>
+            <li>subsub1</li>
+            <li>subsub2</li>
+            <li>subsub3</li>
+          </ul>
+        <li>sub13</li>
+        <li>sub14</li>
+      </ol>
+    </nav>
+    <p>1.이곳은 p태그입니다</p>
+    <p><span>이곳은 p태그입니다</span></p>
+    <p>3.이곳은 p태그입니다</p>
+    <p>4.이곳은 p태그입니다</p>
+  </header>
+  <!-- 시맨틱 태그 의미가 있는 태그 -->
+  <!-- section 큰주제, article 소주제 이런걸 합쳐서 콘텐츠, span 줄바꿈 없는것? -->
+  <section>
+    <article>
+      <h2>강아지에 관하여</h2>
+      <dl id="dog">
+        <dt>강아지 종류</dt>
+        <dd>독일레퍼트</dd>
+        <dd>시베리안허스키</dd>
+        <dd>골든리트리버</dd>
+        <dd>닥스훈트</dd>
+        <dd>포메라니안</dd>
+      </dl>
+    </article>
+    <article id="cat">
+      <h2>고양이에 관하여</h2>
+      <dl>
+        <dt>고양이 종류</dt>
+        <dd>페르시아이고양이</dd>
+        <dd>메인쿤</dd>
+        <dd>브리티시 숏헤어</dd>
+        <dd>스핑크스 고양이</dd>
+        <dd>먼치킨 고양이</dd>
+      </dl>
+    </article>
+  </section>
+</body>
+</html>
