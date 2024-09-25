@@ -5,7 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>t18.html(테이블 응용)</title>
   <style>
-
+    table {
+      width: 500px;
+      height: 400px;
+      border-collapse: collapse;
+      /* background-color: aquamarine; */
+      /* 그림넣기 배경에 들어가는거라 넘치지 않게 넣으려면 미리 이미지 크기조정을 해야함*/
+      background-image: url("../images/21.jpg");
+    }
+    th, td {
+      border: 1px solid grey;
+      text-align: center;
+    }
+    /* 색이 그림 보다 우선이라 이부분은 그림이 안나옴 */
+    th {
+      background-color: brown;
+    }
+    /* 행과 열에 이미지 넣기 */
+    #t2_2 {
+      background-image: url("../images/4.jpg");
+    }
+    .t2_12 {
+      background-image: url("../images/11.jpg");
+    }
   </style>
 </head>
 <body>
@@ -32,6 +54,29 @@
       <td>33</td>
     </tr>
   </table>
-  <hr />
+  <br />
+  <h2>테이블의 스타일 적용 연습2</h2>
+  <table>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td class="t2_12">12</td>
+      <td>13</td>
+    </tr>
+    <tr id="t2_2">
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td class="t2_12">32</td>
+      <td>33</td>
+    </tr>
+  </table>
 </body>
 </html>
