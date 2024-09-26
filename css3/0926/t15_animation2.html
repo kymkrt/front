@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t15_animation2</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      /* 움직일 이름을 정해야한다 */
+      animation-name: logo;
+      /* 이거 다 생략가능 */
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      /* 4초간 */
+      animation-duration: 4s;
+
+    }
+    /* @ 식별자 관련 */
+    /* 이렇게 퍼센트로 할수도 있다 */
+    @keyframes logo {
+      0% {background-color: red;}
+      25% {background-color: yellow;}
+      50% {background-color: tomato;}
+      75% {background-color: aqua;}
+      100% {background-color: red;}
+    }
+  </style>
+</head>
+<body>
+  <h2>Animation Effect</h2>
+  <div></div>
+  제자리에서 색이 변화됩니다.
+</body>
+</html>

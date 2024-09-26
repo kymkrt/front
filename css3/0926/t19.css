@@ -1,0 +1,41 @@
+/* t19.css */
+body {
+  margin: 0px;
+  font-size: 0.8em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  /* 중간에 공백을 줄수있다 */
+  gap: 10px;
+}
+/* 3등분해서 길이가 똑같기 때문에 픽셀로 줘봐야 의미가 없다 */
+/* padding은 가능 */
+.item {
+  padding: 10px;
+  text-align: center;
+}
+.item1 {
+  /* 4중에서 1개가 가겠다? */
+  /* grid-column: 1/4; */
+  /* 3개중에서 2번째로 가겠다 3개중에 합쳐서 */
+  /* 3개합친게 2번째 자리로 들어간다 */
+  grid-column: 2 / span 3;
+}
+
+.item1 {background-color: antiquewhite;}
+.item2 {background-color: aquamarine;}
+.item3 {background-color: yellowgreen;}
+.item4 {background-color: blue;}
+.item5 {background-color: violet;}
+.item6 {background-color: tomato;}
+.item7 {background-color: slategray;}
+.item8 {background-color: plum;}
+.item9 {background-color: turquoise;}
+.item10 {background-color: turquoise;}
+.item11 {background-color: turquoise;}
+.item12 {background-color: turquoise;}
+.item13 {background-color: turquoise;}
+.item14 {background-color: turquoise;}
+.item15 {background-color: turquoise;}

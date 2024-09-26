@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t12_menu.html</title>
+  <!-- 메뉴기초 -->
+  <style>
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      /* 영역이 없으면 안나옴 */
+      display: block;
+      background-color: aquamarine;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: antiquewhite;
+      padding: 4px;
+      border: 1px solid #ddd;
+    }
+    .sub-menu {
+      padding: 5px;
+    }
+    .sub-menu:hover {
+      background-color: blueviolet  ;
+    }
+  </style>
+</head>
+<body>
+  <!-- 부모 포지션 릴레이티브 자식 앱솔루트 -->
+  <h2>Dropdown 메뉴연습</h2>
+  <p>아래 메뉴에 마우스를 올려보세요</p>
+  <div class="dropdown">
+    <span>Menu</span>
+    <div class="dropdown-menu">
+      <div class="sub-menu">1.어디로갈까요</div>
+      <div class="sub-menu">2.어디로갈까요</div>
+      <div class="sub-menu">3.어디로갈까요</div>
+    </div>
+  </div>
+</body>
+</html>

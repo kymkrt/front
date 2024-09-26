@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t15_animation4</title>
+  <style>
+    /* 딜레이 지연시간 */
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      /* 움직일 이름을 정해야한다 */
+      /* 부모걸 할때는 릴레이티브로 줘야함 */
+      position: relative;
+      animation-name: logo;
+      /* 이거 다 생략가능 */
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      /* 4초간 */
+      animation-duration: 4s;
+      /* 딜레이 -넣으면 스킵됨*/
+      animation-delay: 1s;
+      /* 반복 */
+      /* animation-iteration-count: 3; */
+      animation-iteration-count: infinite;
+      /* 반대로 */
+      /* animation-direction: reverse; */
+      /* 정 반 */
+      animation-direction: alternate;
+    }
+    
+    /* @ 식별자 관련 */
+    /* 이렇게 퍼센트로 할수도 있다 */
+    @keyframes logo {
+      0% {background-color: red; left: 0px; top: 0px;}
+      25% {background-color: yellow; left: 200px; top: 0px;}
+      50% {background-color: tomato; left: 200px; top: 200px;}
+      75% {background-color: aqua; left: 0px; top: 200px;}
+      100% {background-color: red; left: 0px; top: 0px;}
+    }
+  </style>
+</head>
+<body>
+  <h2>Animation Effect</h2>
+  <div></div>
+  제자리에서 색이 변화됩니다.
+</body>
+</html>

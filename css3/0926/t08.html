@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t08.html</title>
+  <style>
+    body {
+      margin: 0px;
+    }
+    .container {
+      width: 800px;
+      margin: 0px auto;
+    }
+    .title {
+      /* 수평의 가운데 이건 쉬움 */
+      text-align: center;
+      border: 1px solid #ddd;
+      width: 600px;
+      /* 수직 가운데는 이렇게 일일히 맞춰야함 */
+      height: 60px;
+      padding: 60px;
+    }
+    .img {
+      text-align: center;
+      width: 200px;
+      height: 100px;
+      padding: 100px;
+      border: 1px solid #ddd;
+      background-color: antiquewhite;
+    }
+    .img2 {
+      height: 300px;
+    }
+    /* 그림은 오파시티 불투명을 바로 붙일수 있다 최대값1은 같음*/
+    #src1 {opacity: 0.2;}
+    #src2 {opacity: 0.5;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>가운데 정렬하기</h2>
+    <p>문서의 내용을 수평/수직 가운데 정렬하기</p>
+    <div class="title">
+      <p>Welcome to korea!</p>
+    </div>
+    <hr />
+    <div class="img">
+      <img src="../../images/12.jpg" width="150px" /> 
+    </div>
+    <hr />
+    <div class="img img2">
+      <img src="../../images/13.jpg" width="150px" id="src1"/> 
+      <img src="../../images/14.jpg" width="150px" id="src2"/> 
+      <img src="../../images/15.jpg" width="150px" /> 
+    </div>
+  </div>
+</body>
+</html>

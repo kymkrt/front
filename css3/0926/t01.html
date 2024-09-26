@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t01.html</title>
+  <!-- 외부 스타일도 가능 외부로 하면 파일 갯수가 늘어서 내부로 하는거 -->
+  <style>
+    body {
+      /* css리셋의 기본 */
+      /* margin: 0px; */
+      /* 이거 지금은 안줘도 됨 쓰는 부분이 없기 때문 */
+      padding: 0px;
+    }
+    /* 블록 형식이라 그 줄을 다 색바뀜 */
+    .a1, .a2, .a3 {
+      background-color: aqua;
+      /* 속성을 바꿈 */
+      /* display: inline; */
+      /* 이러면 영역도 생김 */
+      display: inline-block;
+      width: 70px;
+      height: 50px;
+    }
+    .a4 {
+      /* 사라진 흔적도 안보임=영역도 안보임 코드는 있다 */
+      display: none;
+      background-color: aqua;
+    }
+    /* 인라인이라 딱 그부분만 색바뀜 */
+    .s1 {
+      background-color: aquamarine;
+      /* 다음줄로 내려가서 영역의 영역이 된다 */
+      /* display: block; */
+    }
+    .a5, .a6, .a7 {
+      background-color: beige;
+      border: 1px solid grey;
+      /* 크기를 안주면 전체를 다차지함 */
+      width: 200px;
+      padding: 10px;
+      
+      margin: 0px 0px 2px;
+    }
+    /* 이렇게 새로 추가해야 할때 윗부분만 복사해서 괄호 넣어서 완성하는게 좋다 길게 이어지기 때문 */
+    /* .a5, .a6, .a7 { 이렇게 복사해옴 */
+    /* 인라인 우선 */
+    .a5:hover, .a6:hover, .a7:hover {
+      background-color: coral;
+    }
+    .b1 {
+      /* div는 블록이지만 글자 자체는 inline */
+      border: 1px solid red;
+      /* 인라인이라 자기 영역만 차지하기 때문에 아래가 작동하지 않는다 */
+      width: 150px;
+      /* 아래는 작동함 */
+      padding: 10px;
+      /* margin: 5px 5px; */
+    }
+    .b1:hover, .b2:hover {
+      /* 인라인영역지정한데에 넣은것 */
+      background-color: chartreuse;
+    }
+    .b2 {
+      /* div는 블록이지만 글자 자체는 inline */
+      border: 1px solid rebeccapurple;
+      /* 인라인이라 자기 영역만 차지하기 때문에 아래가 작동하지 않는다 */
+      width: 150px;
+      /* 아래는 작동함 */
+      padding: 10px;
+      /* 위에 제한 있으면 작동안될수 있음 이 경우 좌우는 적용됨*/
+      margin: 5px 5px;
+      /* 영역차지 */
+      display: inline-block;
+    }
+    /* .a8, .a9, .a10, .a11, .a12 { */
+    /* 클래스명을 여러개 줘서 관리하면 편하다 */
+    .dd {
+      width: 300px;
+      height: 200px;
+      border: 1px solid gray;
+    }
+    /* 그라데이션 넣기 */
+    /* rgba a=알파(오파시티) 불투명도 100%가 1이다*/
+    .a8 {background-color: rgba(81, 0, 255, 0.5);}
+    /* .a9 {background-color: blue;} */
+    /* 그냥 백그라운드만 쓰면 기본이 컬러 단색일때는 그냥 써도됨 */
+    /* linear-gradation 선형 그라데이션 */
+    /* 왼쪽(방향)으로 이색에서 이색으로 가겠다 left tight top bottom*/
+    /* .a9 {background: linear-gradient(to right, #f00, #ff0);} */
+    /* .a9 {background: linear-gradient(to bottom, #f00, #ff0);} */
+    /* 이렇게 색 여러개를 넣을수 있다 */
+    .a9 {background: linear-gradient(to bottom, #f00,#fff, #ff0);}
+    /* 각도로 줄수도 있음 숫자deg */
+    .a10 {background: linear-gradient(45deg, #00f, #fff);}
+    /* 원형 그라데이션 모양 안쪽색 바깥색*/
+    .a11 {background: radial-gradient(circle, brown, green);}
+    /* 원형 그라데이션 지정한색으로 계속 더 넣을수 있다*/
+    .a12 {background: radial-gradient(white, brown, green);}
+    /* 이렇게 투명하게 해서 겹치면 2개를 볼수 있게 할수 있다  */
+    .a13 {
+      background-color: rgba(255, 0, 0, 0.3);
+      position: absolute;
+      /* 위치조정 */
+      left: 50px;
+      top: 500px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Display 속성</h2>
+  <p>각각의 요소들을 어떻게 보여줄지 결정한다</p>
+  <p>
+    속성 : visiblity(기본값:보이기) / hidden(감추기) / inherit(부모요소의 값을 상속받아서 사용 위에서 지정해놓은 속성(글자크기 간격등)을 가져온다)
+  </p>
+  <hr />
+  <p>
+    <b>Display 속성</b>
+    none : <span class="s1">화면</span>에서 완전히 사라지게 됩니다.<br />
+  </p>
+  <hr />
+  <!-- 한번씩 나오는거라 id 사용가능 -->
+  <h3>사용 예제</h3>
+  <!-- 얘도 블록임 줄이 바뀐다 -->
+  <div class="a1">1.안녕</div>
+  <div class="a2">2.안녕</div>
+  <div class="a3">3.안녕</div>
+  <div class="a4">4.안녕</div>
+  <hr />
+  <h2>Block / Inline / Inline-Block 속성</h2>
+  <!-- 계속 한줄로만 이어지는거 문단의 개념이 없는것 그림도 인라인임 글씨 옆에 생김 = 인라인 -->
+  <!-- ul li ol 같은건 전부 줄 바뀌면서 나온다 = 블록 -->
+  <!-- 한줄인데 영역을 차지하는것? = 인라인 블록 -->
+  <div class="a5">5.<font color="red" class="b1">안녕(inline)</font></div>
+  <div class="a6">6.<font color="blue" class="b2">안녕(inline-block)</font></div>
+  <div class="a7">7.<font color="brown" class="b3">안녕(block)</font></div>
+  <hr />
+  <!-- 클래스명 2개 넣기 -->
+  <div class="dd a8">8.안녕</div>
+  <div class="dd a9">9.안녕</div>
+  <div class="dd a10">10.안녕</div>
+  <div class="dd a11">11.안녕</div>
+  <div class="dd a12">12.안녕</div>
+  <div class="dd a13">13.안녕</div>
+  
+</body>
+</html>

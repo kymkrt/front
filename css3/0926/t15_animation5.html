@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t15_animation5</title>
+  <style>
+    /* 딜레이 지연시간 */
+    div {
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      /* 움직일 이름을 정해야한다 */
+      /* 부모걸 할때는 릴레이티브로 줘야함 */
+      /* 움직이는건 항상 부모가 있어야함 부모기준으로 움직이기 때문 */
+      position: relative;
+      animation: horse 5s;
+      animation-fill-mode: forwards;
+    }
+
+    #horse1 {animation-timing-function: linear;}
+    #horse2 {animation-timing-function: ease;}
+    #horse3 {animation-timing-function: ease-in;}
+    #horse4 {animation-timing-function: ease-out;}
+    #horse5 {animation-timing-function: ease-in-out;}
+    
+    /* @ 식별자 관련 */
+    /* 이렇게 퍼센트로 할수도 있다 */
+    @keyframes horse {
+      from {left: 0px;}
+      to {left: 300px;}
+    }
+  </style>
+</head>
+<body>
+  <h2>Animation Effect</h2>
+  <div id="horse1">horse1</div>
+  <div id="horse2">horse2</div>
+  <div id="horse3">horse3</div>
+  <div id="horse4">horse4</div>
+  <div id="horse5">horse5</div>
+  말이 달려갑니다.
+</body>
+</html>

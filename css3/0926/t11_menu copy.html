@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t11_menu.html</title>
+  <!-- 메뉴만들기 -->
+  <style>
+    body {
+      margin: 0px;
+
+    }
+    /* 메뉴 초기화 */
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+    }
+    ul li {
+      background-color: #ddd;
+      /* 블록태그라 크기제한 */
+      width: 80px;
+      /* 디스플레이와 플룻은 동시에 못씀 둘중하나만가능 */
+      float: left;
+      /* display: inline-block; */
+      padding: 10px;
+      border-right: 1px solid #ccc;
+      text-align: center  ;
+    }
+    ul li:hover {
+      background-color: burlywood;
+    }
+    a {
+      text-decoration: none;
+    }
+    /* float 나오면 무조건 뒤에 float */
+    .content {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <!-- 메뉴는 리스트로 구현 -->
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Guest</a></li>
+    <li><a href="#">Board</a></li>
+    <li><a href="#">Pds</a></li>
+  </ul>
+  <p class="content">메뉴를 구성해 봅니다</p>
+</body>
+</html>

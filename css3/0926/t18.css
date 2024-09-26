@@ -1,0 +1,41 @@
+/* t18.css */
+body {
+  margin: 0px;
+  font-size: 0.8em;
+}
+
+.container {
+  display: grid;
+  /* 3개열로 만들어달라 */
+  grid-template-columns: auto auto auto; 
+  /* 4개도 가능 이러면 남는 부분이 생긴다 */
+  /* grid-template-columns: auto auto auto auto;  */
+  /* 모르겠으면 오토로 줘라 */
+  /* div보다 빠르고 편함 */
+  grid-template-columns: 200px 200px 150px; 
+  grid-template-rows: 300px 300px 300px; 
+  /* 공백도 줄수 있음 */
+  /* 사이 사이 공백이 들어감 */
+  /* 어라운드는 양쪽 끝 공백이 절반만 들어감 */
+  /* justify-content: space-around; */
+  /* evenly는 다 똑같음 */
+  /* justify-content: space-evenly; */
+  /* 양쪽끝에는 없음 */
+  justify-content: space-between;
+}
+/* 3등분해서 길이가 똑같기 때문에 픽셀로 줘봐야 의미가 없다 */
+/* padding은 가능 */
+.item {
+  padding: 10px;
+  text-align: center;
+}
+
+.item1 {background-color: antiquewhite;}
+.item2 {background-color: aquamarine;}
+.item3 {background-color: yellowgreen;}
+.item4 {background-color: blue;}
+.item5 {background-color: violet;}
+.item6 {background-color: tomato;}
+.item7 {background-color: slategray;}
+.item8 {background-color: plum;}
+.item9 {background-color: turquoise;}

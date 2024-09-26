@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t07.html</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    .container {
+      margin: 0px auto;
+      width: 1000px;
+      height: 1000px;
+    }
+    .container .top {
+      width: 1000px;
+      height: 100px;
+      background-color: grey;
+      text-align: center;
+    }
+    .container .content {
+      /* width: 800px;
+      height: 800px; */
+      background-color: aliceblue;
+    }
+    .container .content .left {
+      float: left;
+      width: 100px;
+      height: 800px;
+      background-color: blue;
+    }
+    .container .content .middle .m1 .box1 {
+      float: left;
+      width: 395px;
+      height: 400px;
+      
+      background-color: cadetblue;
+    }
+    .container .content .middle .m1 .box2 {
+      float: right;
+      width: 395px;
+      height: 400px;
+      
+      background-color: yellowgreen;
+      /* clear: both; */
+    }
+    .container .content .middle .m2 .box3 {
+      float: left;
+      width: 395px;
+      height: 400px;
+      
+      background-color: aqua;
+    }
+    .container .content .middle .m2 .box4 {
+      float: right;
+      width: 395px;
+      height: 400px;
+      
+      background-color: tomato;
+    }
+    .container .content .right {
+      float: right;
+      width: 100px;
+      height: 800px;
+      background-color: red;
+      /* clear: both; */
+    }
+    /* 클리어 추가 정리 */
+    .container .bottom {
+      clear: both;
+      width: 1000px;
+      height: 100px;
+      background-color: thistle;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top">위쪽메뉴</div>
+    <div class="content">
+      <div class="left">왼쪽메뉴</div>
+      <div class="middle">
+        <!-- 여기서 다시 나눠야 함 m1 m2로 -->
+        <div class="m1">
+          <div class="box1">1번상자</div>
+          <div class="box2">2번상자</div>
+        </div>
+        <div class="m2">
+          <div class="box3">3번상자</div>
+          <div class="box4">4번상자</div>
+          </div>
+      </div>
+      <div class="right">오른쪽 메뉴</div>
+    </div>
+    <div class="bottom">아래쪽 메뉴</div>
+  </div>
+</body>
+</html>

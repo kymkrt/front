@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t13_pulldown1.html</title>
+  <style>
+    /* css reset */
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+    nav ul li {
+      list-style: none;
+      padding: 0px;
+    }
+    a {
+      /* text-decoration: none; */
+      /* 상속 이렇게 해도 됨 기본값? */
+      text-decoration: inherit;
+    }
+
+    /* 주메뉴설정 */
+    nav {
+      text-align: center;
+    }
+    /* 자식개념 */
+    nav > ul {
+      background-color: aqua;
+      padding: 0px 10px;
+    }
+    /* 주메뉴의 컨텐츠 항목 */
+    nav > ul >li {
+      display: inline-block;
+      margin: 0px;
+      padding: 10px;
+      width: 100px;
+    }
+    nav > ul >li:hover {
+      background-color: burlywood;
+    }
+    nav > ul >li:hover a {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">주메뉴</a></li>
+      <li><a href="#">주메뉴</a></li>
+      <li><a href="#">주메뉴</a></li>
+      <li><a href="#">주메뉴</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
