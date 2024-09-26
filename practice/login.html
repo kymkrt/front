@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login.html</title>
+  <style>
+    input {
+      margin: 5px;
+    }
+    div {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset align="center">
+      <legend><font size="5" color="blue">로그인</font></legend>
+      아이디<input type="text" autofocus>
+      비밀번호<input type="password">
+      <input type="submit" value="로그인">
+    </fieldset>
+    <fieldset  align="center">
+      <legend><font size="5" color="blue">가입하기</font></legend>
+      아이디 <input type="text" required placeholder="여백없이 입력하시오"><br />
+      비밀번호 <input type="password" required placeholder="여백없이 입력하시오"><br />
+      이름 <input type="text" required placeholder="여백없이 입력하시오"><br />
+      메일주소 <input type="email" required placeholder="여백없이 입력하시오"><br />
+      전화번호 <input type="tel" placeholder="여백없이 입력하시오"><br />
+    </fieldset>
+    <fieldset align="center">
+      <label><input type="submit" value="가입하기"></label>
+      <label><input type="reset" value="다시쓰기"></label>
+    </fieldset>
+    <hr />
+    <h1 align="left">등록정보</h1>
+    <div>
+      참여인원(최대10명) <input type="number" max="10" min="0" /> 
+    </div>
+    <div>
+      지원물품(1인당 5개) <input type="number" max="25" min="0" /> 
+    </div>
+    <div>
+      희망단계(하,중,상) <input type="range" max="2"/>
+    </div>
+    <fieldset>
+      <legend>수강과목을 선택하세요 (1과목 선택 가능)</legend>
+      신청 과목(회화)
+      <label for="e1"><input type="radio" id="e1" name="eng1" checked>영어 회화(초급)</label>
+      <label for="e2"><input type="radio"  id="e2" name="eng1">영어 회화(중급)</label>
+      <label for="e3"><input type="radio"  id="e3" name="eng1">영어 회화(고급)</label>
+      <br />
+      신청 과목(자격)
+      <label for="e11"><input type="radio" id="e11" name="eng2" checked>TOEIC</label>
+      <label for="e12"><input type="radio"  id="e12" name="eng2">TOEFL</label>
+      <label for="e13"><input type="radio"  id="e13" name="eng2">OPIC</label>
+    </fieldset>
+  </form>
+</body>
+</html>
