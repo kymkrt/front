@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 반응형에선 밑 부분 필수 -->
+  <!--내 디바이스를 기준으로 보겠다 폭 100프로  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t20_MediaQuery.html</title>
+  <style>
+    body {
+      /* css 리셋 */
+      margin: 0px;
+      padding: 0px;
+    }
+    .container {
+      width: 1000px;
+      /* 가운데 정렬 */
+      margin: 0 auto;
+      font-size: 1.5em;
+      background-color: #eee;
+      border: 2px solid gray;
+    }
+    /* 모바일을 먼저할건지 pc를 기준으로 할건지 미리 정하고 설정해야한다 여기서는 pc 기준 설계 */
+    /* 공통설계 부분 */
+    div#area{
+      width: 960px;
+      height: 350px;
+      margin: 0 auto;
+      background-color: blueviolet;
+    }
+    #tbl {
+      /* 1000으로 주면 기본 마진 때문에 안맞을 확률이 높다  좀 적게주기*/
+      width: 960px;
+      height: 450px;
+      margin: 0 auto;
+      background-color: aliceblue;
+      border-collapse: collapse;
+    }
+    th ,td {
+      border: 1px solid #bbb;
+      text-align: center;
+    } 
+    div#img {text-align: center;}
+    /* 아이디 안에 태그 */
+    div#img img{
+      width: 1000px;
+      text-align: center;
+      /* overflow: auto; */
+    }
+    /* 위에가 전부 css reset임 */
+
+    /* 미디어 쿼리 */
+/* screen width >= 1024px (max-width < 1024px == max-width:1024px) */
+    /*미디어쿼리쓸때는 @  */
+    /* 기본 디바이스 크기에 크기가 1024일때 처리를 알려줄게 1024까지는 아래를 쓰고 넘으면 위에 css리셋 부분을 쓴다 */
+    /* 그래서 처음 css리셋 부분을 잘만들어야 한다 그부분을 아래에 넣기 때문 */
+    /* 복사하고 줄 잘맞춰야함 */
+  @media screen and (max-width:1024px) {
+    .container {
+      /* 전체크기를 700으로 보겠다 마진 생각해야함 */
+      width: 700px;
+      margin: 0 auto;
+      /* 사이즈가 줄어서 글자크기가 크면 안맞으니까 조정 */
+      font-size: 1em;
+      background-color: #eee;
+      border: 2px solid gray;
+    }
+    div#area{
+      /* 박스 */
+      width: 680px;
+      height: 400px;
+      margin: 0 auto;
+      background-color: chocolate;
+    }
+    #tbl {
+      width: 680px;
+      height: 250px;
+      margin: 0 auto;
+      background-color: aliceblue;
+      border-collapse: collapse;
+    }
+    /* 안바꾼건 베이스 따라가니까 굳이 추가 안해도됨 */
+    /* th ,td {
+      border: 1px solid #bbb;
+      text-align: center;
+    }  */
+
+    div#img img {
+      width: 680px;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width:400px) {
+    .container {
+      width: 260px;
+      margin: 0 auto;
+      /* 사이즈가 줄어서 글자크기가 크면 안맞으니까 조정 */
+      font-size: 0.7em;
+      background-color: #eee;
+      border: 1x solid gray;
+    }
+    div#area{
+      /* 박스 */
+      width: 260px;
+      height: 100px;
+      margin: 0 auto;
+      background-color: darkmagenta;
+    }
+    #tbl {
+      width: 260px;
+      height: 120px;
+      margin: 0 auto;
+      background-color: aliceblue;
+      border-collapse: collapse;
+    }
+    /* 안바꾼건 베이스 따라가니까 굳이 추가 안해도됨 */
+    /* th ,td {
+      border: 1px solid #bbb;
+      text-align: center;
+    }  */
+
+    div#img img {
+      width: 260px;
+      text-align: center;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>미디어 쿼리 연습(58번)</h2>
+    <p>(반응형 웹 사이트 : Responsible Wep Design)</p>
+    <hr />
+    <ul>
+      <!-- 기준 -->
+      <li>데스크탑 : 1024px(1200px) 이상</li>
+      <li>태블릿 : 768px(992px) ~ 데스크탑</li>
+      <li>모바일 : 768px 이하(576px)</li>
+    </ul>
+    <hr />
+    <div>이곳은 반응형 웹 사이트를 위한 화면입니다</div>
+    <hr />
+    <div id="area"></div>
+    <hr />
+    <table id="tbl">
+      <tr>
+        <th>주제</th>
+        <th>강사</th>
+        <th>장소</th>
+      </tr>
+      <tr>
+        <td>웹 표준에 대하여</td>
+        <td>홍길동</td>
+        <td>그린아카데미</td>
+      </tr>
+      <tr>
+        <td>Java 프로그래밍</td>
+        <td>김영민</td>
+        <td>그린 402호</td>
+      </tr>
+    </table>
+    <hr />
+    <div id="img"> 
+      <img src="../../images/11.jpg" />
+    </div>
+  </div>
+</body>
+</html>
