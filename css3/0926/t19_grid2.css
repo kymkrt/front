@@ -1,0 +1,64 @@
+/* t19_grid2.css */
+body {
+  margin: 0;
+  font-size: 0.8em;
+}
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;  /* 5개 열을 균등하게 배치 */
+  gap: 3px; /* 항목간의 갭은 3px씩 반영한다. */
+}
+
+.item {
+  padding: 10px;
+  text-align: center;
+}
+
+
+/* item1는 1열에서 시작해서 5개열을 합친다. */
+.item1 { grid-column: 1 / span 5; }
+/* 시작셀 / 합치는 셀의 수 */
+
+/* item2는 2행에서 시작해서 4개행을 합친다. */
+.item2 { grid-row: 2 / span 4; }
+
+/* item6는 5열의 2행에서 시작해서 5개행을 합친다. */
+.item6 { 
+  /* 1 안합침 5에서 시작만한다 */
+  grid-column: 5 / span 1; 
+  /* 2번째 부터 5개합침 */
+  grid-row: 2 / span 5; 
+}
+
+/* item11는 4행에서 시작해서 2개행을 3열에서 2개 열을 합친다. */
+.item11 { 
+  grid-row: 4 / span 2; 
+  grid-column: 3 / span 2; 
+}
+
+/* item14는 6행의 3열에서 시작해서 3개열을 합친다. */
+.item14 { 
+  grid-row: 6 / span 1; 
+  grid-column: 2 / span 3; 
+}
+
+/* item15는 1열에서 시작해서 5개열을 합친다. */
+.item15 { grid-column: 1 / span 5; }
+  /* 아래거 안써도됨 이미 되있기 때문 */
+  /* grid-row: 7 / span 1; */
+
+.item1 {background-color: dodgerblue;}
+.item2 {background-color: aqua;}
+.item3 {background-color: blue;}
+.item4 {background-color: blueviolet;}
+.item5 {background-color: brown;}
+.item6 {background-color: burlywood;}
+.item7 {background-color: cadetblue;}
+.item8 {background-color: chartreuse;}
+.item9 {background-color: chocolate;}
+.item10 {background-color: burlywood;}
+.item11 {background-color: cadetblue;}
+.item12 {background-color: chartreuse;}
+.item13 {background-color: chocolate;}
+.item14 {background-color: antiquewhite;}
+.item15 {background-color: darkslategray;}
