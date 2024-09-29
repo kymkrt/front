@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>div4각</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    div {
+      font-size: 1em;
+    }
+    .container {
+      width: 1000px;
+    }
+    .container .top {
+      height: 100px;
+      background-color: aqua;
+    }
+    .container .left {
+      width: 100px;
+      height: 800px;
+      background-color: yellowgreen;
+      float: left;
+    }
+    .middle {
+      float: left;
+      width: 800px;
+      height: 800px;
+    }
+    .middle .mup {
+      width: 800px;
+      height: 400px;
+    }
+    .middle .mdown {
+      width: 800px;
+      height: 400px;
+    }
+    .m1, .m2, .m3, .m4 {
+      width: 400px;
+      height: 400px;
+      float: left;
+    }
+    
+    .m1 { background-color: thistle; }
+    .m2 { background-color: wheat; }
+    .m3 { background-color: whitesmoke; }
+    .m4 { background-color: snow; }
+
+    .container .right {
+      width: 100px;
+      height: 800px;
+      background-color: violet;
+      float: right;
+    }
+
+    .container .bottom {
+      clear: both;
+      height: 100px;
+      background-color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <h1>div 연습</h1>
+  <div class="container">
+    <div class="top">위쪽메뉴</div>
+    <div class="left">왼쪽메뉴</div>
+    <div class="middle">
+      <div class="mup">
+        <div class="m1">m1메뉴</div>
+        <div class="m2">m2메뉴</div>
+      </div>
+      <div class="mdown">
+        <div class="m3">m3메뉴</div>
+        <div class="m4">m4메뉴</div>
+      </div>
+    </div>
+    <div class="right">오른쪽 메뉴</div>
+    <div class="bottom">아래쪽메뉴</div>
+
+  </div>
+  
+</body>
+</html>

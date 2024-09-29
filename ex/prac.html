@@ -3,41 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Border Collapse Example</title>
-  <style>
-    table {
-      border-collapse: collapse; /* 경계가 겹치는 것을 허용 */
-      width: 100%;
-    }
-    th, td {
-      border: 1px solid black; /* 각 셀의 경계 설정 */
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css_flex.css">
+  <title>parc.html</title>
 </head>
 <body>
-  <div style="margin: 20px;">
-    이 박스는 바깥쪽 여백이 20px입니다.
+  <div class="container">
+    <div class="item1">1번</div>
+    <div class="item2">2번</div>
+    <div class="item3">3번</div>
+    <div class="item4">4번</div>
+    <div class="item5">5번</div>
+    <div class="item6">6번</div>
+    <div class="item7">7번</div>
+    <div class="item8">8번</div>
+    <div class="item9">9번</div>
+    <div class="item10">10번</div>
   </div>
-
-  <div style="padding: 10px; border: 1px solid black;">
-    이 박스는 안쪽 여백이 20px입니다.
-  </div>
-    <hr />
-  <table>
-    <tr>
-      <th>Header 1</th>
-      <th>Header 2</th>
-    </tr>
-    <tr>
-      <td>Row 1, Cell 1</td>
-      <td>Row 1, Cell 2</td>
-    </tr>
-    <tr>
-      <td>Row 2, Cell 1</td>
-      <td>Row 2, Cell 2</td>
-    </tr>
-  </table>
 </body>
 </html>
