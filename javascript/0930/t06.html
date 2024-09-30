@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t06.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 하나의 스크립트에 함수 생성
+    // 호출전까지는 실행안됨
+    function msg () {
+      alert("메세지를 출력합니다");
+    }
+    function atom1 () {
+      // 자바가 아니라 타입 안써도됨 int 쓰면 오류남
+      su=prompt("숫자를 입력하세요");
+      alert("입력하신 숫자는 "+su+"입니다");
+    }
+    function atom2 () {
+      res = confirm("작업을 계속 할까요?");
+      alert("선택하신 작업은 "+res);
+    }
+    // 자바하고 같은 제어문
+    function atom3 () {
+      res = confirm("작업을 계속 할까요?");
+      if (res) alert("작업을 계속합니다");
+      else alert("작업을 마칩니다");
+    }
+    // 자바하고 같은 제어문
+    function atom4 () {
+      // 1 가능
+      while(1) {
+        res = confirm("작업을 계속 할까요?");
+        if (res) alert("작업을 계속합니다");
+        else {
+          alert("작업을 마칩니다");
+          break;
+        }
+      }
+      alert("작업을 종료합니다");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>함수호출.....</h2>
+    <button onclick="msg()" class="btn btn-success">메세지 출력1</button>
+    <input type="button" value="메세지출력2" onclick="msg()" class="btn btn-primary">
+    <hr />
+    <input type="button" value="숫자입력" onclick="atom1()" class="btn btn-info">
+    <input type="button" value="작업진행여부1" onclick="atom2()" class="btn btn-warning">
+    <input type="button" value="작업진행여부2" onclick="atom3()" class="btn btn-secondary">
+    <input type="button" value="작업진행여부3" onclick="atom4()" class="btn btn-danger">
+  </div>
+</body>
+</html>

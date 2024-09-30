@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ECMA 6(class 개념나옴) 버전 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t02.html</title>
+  <!-- 인라인스타일 -->
+  <!-- 랭귀지하고 타입 생략가능 이제는 표준이기 때문 -->
+  <!-- <script languege="javascript" type="text/javascript"></script> -->
+  <!--윈도우 -도큐멘트-폼 -인풋 이런구조  -->
+  <script>
+    // 자바스크립트에서는 에러가남 ;써야함
+    // 이건 브라우저에 띄우는것 
+    // 됴큐먼트에 찍어주는건 명령들(alert 같은것)이 끝나야 나온다
+    document.write("1. 이곳은 자바스크립트 영역입니다.");
+    // 콘솔에 띄우는것
+    console.log("1. 반갑습니다")
+    console.log("2. 반갑습니다" + " 또 만나요")
+    console.log("3. 반갑습니다" + 123)
+    // 자바에서는 에러남 숫자에 문자를 더하기 때문 근데 자바스크립트에서는 타입무시라 에러안남
+    console.log(123 + "4. 반갑습니다" + 456)
+    // 이렇게 할수도 있음
+    console.log(123, "5. 반갑습니다", 456)
+    // 연산도 가능
+    console.log(123, "6. 반갑습니다", 10*20)
+    alert("안녕하세요");
+    // 자바 스윙하고 비슷
+    res=prompt("수치를 입력하세요");
+    console.log("입력한 값은  ",res);
+    // true false 는 나옴
+    res=confirm("계속할까요? (y/n)")
+    console.log("입력한 값은  ",res);
+
+  </script>
+  <!-- 스크립트안에서 처리하는 내용은 본문 어디에 와도 작동 순서는 위에서 아래 -->
+</head>
+<body>
+  <h2>이곳은 body 태그 안의 h2 태그입니다</h2>
+  <script>
+    document.write("2. 이곳은 자바스크립트 영역입니다.");
+  </script>
+</body>
+</html>

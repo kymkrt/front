@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t03.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 함수는 어디써도 상관없음
+    atom1();
+    // atom2(); 에러남
+
+    // 본문에 찍는거라 본문에 출력하는 html코드는 모두 쓸수 있다
+    // write는 줄안바꿈
+    document.write("1.출력연습<br />");
+    // "" 사용금지 '' 사용
+    document.write("<p align='right'>2-1.출력연습</p>");
+    // "" 쓰고 싶으면 경우를 바꿔야 한다 ''
+    document.write('<p align="center">2-2.출력연습</p>');
+    // 혹은 제어코드라고 알려줘야 함 \
+    document.write("<p align=\"center\">2-3.출력연습</p>");
+    document.write("3.출력연습<br />");
+    
+    // 함수: 타입 대신에 function 쓰면 됨
+    function atom1() {
+      alert("1.안녕하세요");
+    };
+    
+    // atom1();
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <!-- 부트스트랩에서 넣는 클래스 -->
+  <div class="container">
+    <h2>자바스크립트 함수 호출</h2>
+    <!-- 수행이 안됬으면 무조건 f12로 보자 -->
+    <script>
+      function atom2() {
+      alert("2.안녕하세요");
+    };
+    // 메모리가 서로 다르게 들어감
+    atom2();
+    </script>
+<!-- 함수를 만들고 난다음에는 전부 메모리에 올려야한다 아니면 하나의 스크립트에다가 여러개의 함수를 올려야한다 -->
+    <h3>2. 자바스크립트 함수 호출</h3>
+    <script>
+      atom1();
+      atom2();
+    </script>
+  </div>
+</body>
+</html>
