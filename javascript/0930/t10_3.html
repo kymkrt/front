@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t10_3.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function fCheck1() {
+      myform.su.value += 1;
+    }
+    function fCheck2() {
+      myform.su.value += 2;
+    }
+    function fCheck3() {
+      myform.su.value += 3;
+    }
+    function fCheckAdd() {
+      myform.su.value += '+';
+    }
+
+    function fClear() {
+      myform.su.value = "";
+      myform.res.value = "";
+    }
+
+    function calc() {
+      myform.res.value = eval(myform.su.value);
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>입력된 값의 출력</h2>
+  <form name="myform" action="#">
+    <p>수식 <input type="text" name="su" class="form-control" required ></p>
+    <p>결과 <input type="text" name="res" class="form-control" readonly ></p>
+    <p>
+      <input type="button" value="1" onclick="fCheck1()" class="btn btn-success">
+      <input type="button" value="2" onclick="fCheck2()" class="btn btn-success">
+      <input type="button" value="3" onclick="fCheck3()" class="btn btn-success">
+      <input type="button" value="+" onclick="fCheckAdd()" class="btn btn-danger">
+    </p>
+    <p>
+      <input type="button" value="계산" onclick="calc()" class="btn btn-primary">
+      <input type="button" value="Clear" onclick="fClear()" class="btn btn-warning">
+    </p>
+  </form>
+</div>
+</body>
+</html>

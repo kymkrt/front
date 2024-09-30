@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t09_3.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 윈도우 도큐먼트까지는 생략가능 마이폼은 생략불가 -->
+  <!--콘솔 라인번호를 막 믿으면 안되고 실제 코드 부분에 찾아야 한다  -->
+  <script>
+    // 직접 입력받기
+    function calc () {
+      su1 = myform.su1.value;
+      su2 = myform.su2.value;
+      // *로 하면 연산자로 된다 +말고 다른건 수치 연산자이기 때문
+      // tot=su1+su2;
+      // 타입이 없기 때문에 그냥 Integer같은거 안씀
+      // tot=parseInt(su1)+parseInt(su2);
+      // 수치로 바꾸는 함수
+      // tot=Number(su1)+Number(su2);
+      // 이건 안됨 각각에 대해서만 변환가능
+      // tot = Number(su1 + su2);
+      // 수식으로 바꿔서 하고 싶으면 이렇게
+      tot = eval(parseInt(su1)+parseInt(su2));
+
+      // 웹에 입력된 값은 전부 문자로 본다 그냥 이렇게 쓰면 붙이기 연산 
+      // 하나만 있으면 수치로 계산
+      // 단 +만 이렇게 작동 +는 역할이 있기 때문
+      alert("su1 + su2 = "+tot+" 입니다");
+    }
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>입력한 수의 합을 계산하세요</h2>
+    <form name="myform">
+      <!-- 여기 값에 도달하려면 최소 폼에서 시작해야됨 -->
+      <p>수1 <input type="number" name="su1" value="10" required></p>
+      <p>수2 <input type="number" name="su2" value="20" required></p>
+      <p><input type="button" value="계산" onclick="calc()" class="btn btn-success"></p>
+    </form>
+  </div>
+</body>
+</html>

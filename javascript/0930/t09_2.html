@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t09_2.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 윈도우 도큐먼트까지는 생략가능 마이폼은 생략불가 -->
+  <!--콘솔 라인번호를 막 믿으면 안되고 실제 코드 부분에 찾아야 한다  -->
+  <script>
+    // 직접 입력받기
+    function calc () {
+      // su = myform.su.value;
+      su = prompt("계산할 마지막 수를 입력하세요");
+      tot=0;
+
+      for(i=1;i<=su;i++){
+        tot+=i;
+        document.write("1부터 " + i + " 까지의 합은 "+tot+"<br />");
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>1부터 입력한 수까지의 합을 계산하세요</h2>
+    <form name="myform">
+      <!-- 여기 값에 도달하려면 최소 폼에서 시작해야됨 -->
+      <!-- <p>수 <input type="number" name="su" value="10" required></p> -->
+      <!-- submit은 서버로 전송하는거고 우리는 값을 체크 하기 때문에 안씀 -->
+      <p><input type="button" value="계산" onclick="calc()" class="btn btn-success"></p>
+    </form>
+  </div>
+</body>
+</html>
