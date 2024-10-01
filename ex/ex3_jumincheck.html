@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex3_jumincheck</title>
+  <script>
+    'use strict'
+
+    const chnum = [2,3,4,5,6,7,8,9,2,3,4,5];
+    let tot ="";
+    
+    function check() {
+      if(jumin.length != 13) {
+        let jumin = document.getElementById("jumin").value.trim();
+        alert("잘못된 주민번호입니다 다시 입력해주세요");
+        location.reload();
+        //.으로 들어가는거면 name이다
+        document.myform.jumin.focus();
+      }
+      else {
+        let arr1=[];
+        for(let i=0;i<chnum.length;i++){
+          let temp;
+          temp=(jumin.charAt(i))*(chnum[i]);
+          tot+=temp;
+        }
+      }
+      let calc1 = tot/11;
+      let calc2 = tot%11;
+      
+      let calc3= 11-calc2;
+
+      if(calc3 == jumin.charAt(jumin.length-1)) {
+        alert("맞습니다");
+      }
+      else {
+        alert("아닙니다");
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <pre>
+    주민번호 체크하기
+    준비물 : 비교할 값을 준비한다. (234567892345)
+    1. 자신의 주민번호 앞에서 12자리의 각각의 숫자와 준비한 숫자를 각각 곱한후 더해준다
+    2. 결과값 / 11 의 나머지를 구한다
+    3. 11에서 나머지를 뺀다
+    4. 결과값이 10이상이면 1의 자리 숫자만을 자신의 주민번호 13번째와 비교한다
+  </pre>
+  <h2>주민등록번호 판독</h2>
+  <div class="container">
+    <form class="myform">
+      <div>주민번호 <input type="number" name="jumin" id="jumin" class="form-control mb-2" /></div>
+      <div><input type="button" value="체크" onclick="check()" class="form-control mb-2" /></div>
+      <div><input type="button" value="다시하기" onclick="location.reload()" class="form-control mb-2" /></div>
+    </form>
+  </div>
+</body>
+<!-- onkeyup onkeydown window.event.keycode select() -->
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex3_juminCheck.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    function jumin1Check() {
+      let jumin1 = document.getElementById("jumin1").value.trim();
+      if(jumin1.length == 6) document.getElementById("jumin2").focus();
+    }
+
+    function jumin2Check() {
+      if(window.event.keyCode == 13) juminCheck();
+    }
+
+    function juminCheck() {
+      let jumin = document.getElementById("jumin1").value.trim() + document.getElementById("jumin2").value.trim();
+      if(jumin.length != 13 || isNaN(jumin)) {
+        alert("주민번호는 숫자만 입력하세요");
+        document.getElementById("jumin1").value = "";
+        // document.getElementById("jumin2").value = "";
+        document.getElementById("jumin2").focus();
+        document.getElementById("jumin2").select();
+        return;
+      }
+      const check = [2,3,4,5,6,7,8,9,2,3,4,5];
+
+      let hap = 0;
+      for(let i=0; i<check.length; i++) {
+        hap += check[i] * jumin.charAt(i);
+      }
+
+      let na = hap % 11;
+      let checkDigit = 11 - na;
+
+      if(checkDigit > 9) checkDigit = checkDigit % 10;
+
+      let str = "<font color='red'><b>";
+      if(checkDigit == jumin.substring(jumin.length - 1)) {
+        str += "주민번호가 확인 되었습니다.";
+      }
+      else {
+        str += "주민번호가 틀립니다. 확인해 보세요? 혹시 간첩~~~?~~~"
+      }
+      str += "</b></font>";
+
+      document.getElementById("demo").innerHTML = str;
+    }
+  </script>
+</head>
+<body>
+  <pre>
+    주민번호 체크하기
+    준비물 : 비교할 값을 준비한다.(234567892345)
+    1. 자신의 주민번호 앞에서 12자리의 각각의 숫자와 준비한 숫자를 각각 곱한후 더해준다.
+    2. 결과값 / 11 의 나머지를 구한다.
+    3. 11에서 나머지 뺀다.
+    4. 결과값이 10이상이면 1의자리 숫자만을 자신의 주민번호 13번째와 비교한다.
+  </pre>
+  <p><br/></p>
+  <div class="container">
+    <form>
+      <h2 class="text-center">주민번호 입력하기</h2>
+      <div class="text-center">주민번호를 입력하세요</div>
+      <p class="text-center m-3">
+        <div class="input-group">
+          <input type="text" name="jumin1" id="jumin1" maxlength="6" onkeyup="jumin1Check()" autofocus class="form-control" />
+          <div class="input-group-text append"> - </div>
+          <input type="password" name="jumin2" id="jumin2" maxlength="7" size="7" onkeydown="jumin2Check()" class="form-control" />
+        </div>
+      </p>
+      <div><input type="button" value="주민번호체크" onclick="juminCheck()" class="btn btn-success form-control mb-2" /></div>
+      <div><input type="reset" value="다시입력" class="btn btn-primary form-control" /></div>
+    </form>
+    <hr/>
+    <div id="demo"></div>
+  </div>
+</body>
+</html>

@@ -9,11 +9,41 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // 람다식은 프론트에서 애로우 펑션으로 사용됨 ecma 6
+    // 호이스팅으로 선언
+    // 익스텐션 단축키 clg
+    console.log("1.sbs : ",sbs);
+    
+    // 자바와는 다르게 선언전에 사용가능 호이스팅기능(선언전에 미리 메모리에 할당)
+    var sbs;
+    
+    
+    
+    function calc() {
+      sbs=10+20;
+      console.log("2.sbs : ",sbs);
+      // 로컬변수라 에러는 안나지만 호출하면 메모리에 올라가서 그때 오류남
+      sbs=mbc+20;
+      console.log("4.sbs : ",sbs);
+    }
+    // undefined 자바스크립트에서는 값임
+
+    console.log("3.sbs : ",sbs);
+    // 호이스팅 개념이라 헷갈려서 let const가 나옴
+    var mbc=30;
   </script>
 </head>
 <body>
   <p><br /></p>
   <div class="container">
+    <h2>변수 호이스팅</h2>
+    <pre>
+      호이스팅(Hoisting)이란, 변수와 함수의 메모리 공간을 선언전에 미리 할당하는 방식을 의미한다.
+
+    </pre>
+    <p>
+      <input type="button" value="계산" onclick="calc()" class="btn btn-success" />
+    </p>
   </div>
 </body>
 </html>

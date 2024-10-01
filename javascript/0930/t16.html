@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t16.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+// html f12에 나온거랑 여기 코드랑 나오는거 비교해야한다 순서를 알아야함
+
+    'use strict'
+    let cnt =0;
+    
+    // calc1(); 여기 있으면 에러남  익명함수와 애로우 펑션을 사용했을 경우 호이스팅 안됨
+    // 익명함수 (와 Arrow Function)는 호이스팅이 되지 않기에 함수 선언후에 호출해야한다
+
+    // 일반함수
+    // function calc1() {} 이렇게 안하고 익명함수 개념으로 자주 쓴다
+
+    // 함수명을 변수로
+    // 익명함수
+    // let calc1 = function() {}
+
+    // let calc1 = function() {
+    //   console.log(++cnt+"익명함수 호출...(함수표현식)");
+    // }
+    
+    // 익명함수를 Arrow Function으로 표현하기
+    // function을 지우는 대신 괄호옆에 =>
+    // let calc1 = () => {
+    //   console.log(++cnt+"익명함수 호출...(함수표현식)");
+    // }
+
+    // 한줄일때
+    // 바로실행됨 콘솔로그라 리턴이 아님 실행만됨
+    let calc1 = () => console.log(++cnt+"익명함수 호출a...(함수표현식)");
+    // 리턴이 없는 상태에서 콘솔로그가 되어서 리턴이 없으니 언디파이드
+    
+    // 넘어감
+    let calc2 = () => {
+      // 호출하면서 얘를찍고
+      console.log(++cnt+"익명함수 호출b...(함수표현식)");
+      // 리턴까지 나옴
+      return "calc2() 익명함수...";
+    }
+
+    // return도 생략가능
+    // let calc3 = (su1, su2) => {
+    //   return su1+su2;
+    // } 
+    // 펑션으로 내용을 쓰는데 나를 호출하는 애한테 값을 리턴해준다
+    // 매개값을 보냄 매개값을 받아서 처리
+
+    let calc3 = (su1, su2) => su1+su2;
+
+    // 실행자체는 다 여기서 진행됨
+    // 순서대로 진행된다
+    console.log("calc1 : "+ calc1());
+    console.log("calc2 : "+ calc2());
+    // 여기서는 호출해서 작동 리턴이 콘솔로그가 없으므로 값이 리턴으로 나온다
+    console.log("calc3 : "+ calc3(10,20));
+
+    // 함수호출
+    calc1();
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>Arrow Function</h2>
+    <p>
+      <!-- 일단은 함수라 ()붙인다 -->
+      <div><input type="button" value="계산1" onclick="calc1()" class="btn btn-success mb-2"></div>
+      <!-- 익명 함수 호출 -->
+      <div><input type="button" value="계산2" onclick="calc2()" class="btn btn-success mb-2"></div>
+
+      <div><input type="button" value="계산3" onclick="alert(calc3(5,25))" class="btn btn-success mb-2"></div>
+    </p>
+  </div>
+</body>
+</html>

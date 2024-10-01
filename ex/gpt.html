@@ -3,97 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>calculater.html</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <title>ex3_jumincheck</title>
   <script>
-    'use strict';
-    let num = null;
+    'use strict'; // 올바른 use strict 구문
 
-    function cal() {
-      let res = document.my.inp.value;  // 기존에 my.in에서 my.inp로 수정
-      try {
-        let ans = eval(res);  // eval 함수로 계산 수행
-        document.my.inp.value = ans;
-      } catch (e) {
-        document.my.inp.value = "Error";  // 오류 발생 시 "Error" 출력
+    const chnum = [2,3,4,5,6,7,8,9,2,3,4,5];
+
+    function check() {
+      // 주민번호 입력값 가져오기 (함수 안에서 가져와야 함)
+      let jumin = document.getElementById("jumin").value;
+
+      // 하이픈(-)을 제거 (필요시)
+      jumin = jumin.replace(/-/g, '');
+
+      // 유효성 검사 - 13자리 주민번호인지 확인
+      if (jumin.length != 13) {
+        alert("잘못된 주민번호입니다. 다시 입력해주세요");
+        document.getElementById("jumin").focus();
+        return; // 오류 시 함수 종료
       }
-    }
 
-    function check(su) {
-      document.my.inp.value += su;  // 입력 값 추가
-    }
+      let tot = 0; // 숫자 더하기를 위해 tot 초기값을 0으로 설정
+      for (let i = 0; i < chnum.length; i++) {
+        let temp = jumin.charAt(i) * chnum[i];
+        tot += temp;
+      }
 
-    function clearBtn() {
-      document.my.inp.value = "";  // 입력 필드 초기화
-    }
+      // 11로 나눈 나머지 계산
+      let calc = tot % 11;
+      // 11에서 나머지를 뺀 값
+      let result = 11 - calc;
 
-    function memory() {
-      if (num == null) {
-        num = document.my.inp.value;  // 값을 저장
+      // 결과값이 10 이상이면 1의 자리 숫자만 사용
+      if (result >= 10) {
+        result = result % 10;
+      }
+
+      // 결과값과 주민번호의 13번째 자리를 비교
+      if (result == jumin.charAt(12)) {
+        alert("유효한 주민번호입니다.");
       } else {
-        document.my.inp.value = num;  // 저장된 값을 불러옴
+        alert("유효하지 않은 주민번호입니다.");
       }
     }
   </script>
-  <style>
-    body {
-      margin: 0 auto;
-    }
-    .container {
-      width: 1000px;
-      text-align: center;
-    }
-    #inp {
-      width: 400px;
-    }
-    input[type="button"] {
-      width: 100px;
-      height: 100px;
-      margin: 10px;
-      font-size: 2em;
-      font-weight: 600;
-    }
-  </style>
 </head>
 <body>
-  <p><br /></p>
+  <pre>
+    주민번호 체크하기
+    준비물 : 비교할 값을 준비한다. (234567892345)
+    1. 자신의 주민번호 앞에서 12자리의 각각의 숫자와 준비한 숫자를 각각 곱한후 더해준다
+    2. 결과값 / 11 의 나머지를 구한다
+    3. 11에서 나머지를 뺀다
+    4. 결과값이 10이상이면 1의 자리 숫자만을 자신의 주민번호 13번째와 비교한다
+  </pre>
+  <h2>주민등록번호 판독</h2>
   <div class="container">
-    <h2>계산기</h2>
-    <!-- 클래스와 name의 용도 차이 -->
-    <form class="myform" name="my">
-      <div class="r1"><input type="text" name="inp" id="inp" class="form-control"></div>
-      <div>
-        <span><input type="button" value="7" onclick="check(7)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="8" onclick="check(8)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="9" onclick="check(9)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="+" onclick="check('+')" class="btn btn-info" /></span>
-        <span><input type="button" value="-" onclick="check('-')" class="btn btn-info" /></span>
-      </div>
-      <div class="r2">
-        <span><input type="button" value="4" onclick="check(4)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="5" onclick="check(5)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="6" onclick="check(6)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="*" onclick="check('*')" class="btn btn-info" /></span>
-        <span><input type="button" value="/" onclick="check('/')" class="btn btn-info" /></span>
-      </div>
-      <div class="r3">
-        <span><input type="button" value="1" onclick="check(1)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="2" onclick="check(2)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="3" onclick="check(3)" class="btn btn-secondary" /></span>
-        <span><input type="button" value=")" onclick="check(')')" class="btn btn-info" /></span>
-        <span><input type="button" value="(" onclick="check('(')" class="btn btn-info" /></span>
-      </div>
-      <div class="r4">
-        <span><input type="button" value="0" onclick="check(0)" class="btn btn-secondary" /></span>
-        <span><input type="button" value="C" onclick="clearBtn()" class="btn btn-info" /></span>
-        <span><input type="button" value="=" onclick="cal()" class="btn btn-success" /></span>
-        <span><input type="button" value="." onclick="check('.')" class="btn btn-secondary" /></span>
-        <span><input type="button" value="M" onclick="memory()" class="btn btn-secondary" /></span>
-      </div>
-    </div>
-  </form>
+    <form name="myform">
+      <div>주민번호 <input type="text" id="jumin" class="form-control mb-2" placeholder="주민번호 13자리 입력" /></div>
+      <div><input type="button" value="체크" onclick="check()" class="form-control mb-2" /></div>
+      <div><input type="button" value="다시하기" onclick="location.reload()" class="form-control mb-2" /></div>
+    </form>
+  </div>
 </body>
 </html>

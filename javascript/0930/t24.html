@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t24.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    function gugudan() {
+      // 폼태그를 안썼기 때문에 id만 사용
+      let startDan = document.getElementById("startDan").value;
+      let endDan = document.getElementById("endDan").value;
+
+      if(startDan.trim() == "" || endDan.trim() == "") {
+        alert("시작단과 끝단을 입력하세요"); //isNan추가가능?
+        document.getElementById("startDan").focus();
+        return false; //리턴뒤에 팔스가 숨어있다 팔스 써도되고 안써도되고
+      }
+      // 첫번째수가 2번째 수보다 큰 경우 두수를 바꿔치기 한다
+      // 바꾸기 알고리즘
+      let imsi =0;
+      if(startDan>endDan) {
+        imsi = startDan;
+        startDan = endDan;
+        endDan = imsi;
+      }
+
+
+      let temp = '';
+      // 이중포문
+      for(let i = startDan; i <= endDan; i++) {
+        temp+= `<b>${i}단</b><br />`;
+        for(let j=1;j<=9;j++) {
+          temp += `${i} * ${j} = ${i*j}<br />`;
+        }
+        temp += "<br />";
+      }
+      demo.innerHTML = temp;
+    }
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>구구단</h2>
+    <p>
+      <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text mb-2">시작단</span></div>
+        <input type="number" name="startDan" id="startDan" class="form-control mb-2" />
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend"><span class="input-group-text mb-2">끝&nbsp;&nbsp;단</span></div>
+        <input type="number" name="endDan" id="endDan" class="form-control mb-2" />
+      </div>
+      <div><input type="button" value="구구단 출력" onclick="gugudan()" class="btn btn-success form-control mb-2"></div>
+      <div><input type="button" value="다시입력" onclick="location.reload()" class="btn btn-warning form-control mb-2"></div>
+    </p>
+    <hr />
+    <div id="demo"></div>
+  </div>
+</body>
+</html>
