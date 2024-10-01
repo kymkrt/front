@@ -8,15 +8,16 @@
     'use strict'
 
     const chnum = [2,3,4,5,6,7,8,9,2,3,4,5];
-    let tot ="";
+    let tot =0;
     
     function check() {
       if(jumin.length != 13) {
         let jumin = document.getElementById("jumin").value.trim();
         alert("잘못된 주민번호입니다 다시 입력해주세요");
-        location.reload();
         //.으로 들어가는거면 name이다
+        document.getElementById("jumin").value = "";
         document.myform.jumin.focus();
+        return;
       }
       else {
         let arr1=[];
@@ -36,6 +37,7 @@
       }
       else {
         alert("아닙니다");
+        document.getElementById("jumin").value = "";
       }
 
     }
@@ -52,7 +54,7 @@
   </pre>
   <h2>주민등록번호 판독</h2>
   <div class="container">
-    <form class="myform">
+    <form class="myform" name="myform">
       <div>주민번호 <input type="number" name="jumin" id="jumin" class="form-control mb-2" /></div>
       <div><input type="button" value="체크" onclick="check()" class="form-control mb-2" /></div>
       <div><input type="button" value="다시하기" onclick="location.reload()" class="form-control mb-2" /></div>

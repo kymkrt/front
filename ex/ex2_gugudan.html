@@ -14,22 +14,26 @@
     function calc() {
       let startDan = document.getElementById("startDan").value; 
       let endDan = document.getElementById("endDan").value;
-      let row = document.getElementById("row").value;
-
+      let col = document.getElementById("col").value;
+      let ans="";
+      let cnt=0;
       if(startDan> endDan) {
-        let imsi="";
-
-        imsi = startDan;
+        let imsi = startDan;
         startDan = endDan;
         endDan = imsi;
       }
-
-      for(let i = 1; i <= endDan; i++){
-        for(let j = 1; j <= startDan; j++){
-
+      
+      for(let j = startDan; j <= endDan; j++){
+        demo.innerHTML=`${j}단`;
+        for(let i = 1; i <= 9; i++){
+          ans+=`${j}*${i}=${i*j}<br />`;
+        }
+        cnt++;
+        if((cnt%col)==0) {
+          ans+=`<br />`;
         }
       }
-
+      demo.innerHTML=ans;
     }
     </script>
 </head>
@@ -58,12 +62,12 @@
     <form>
       <div>시작값<input type="number" id="startDan" /></div>
       <div>끝값<input type="number" id="endDan" /></div>
-      <div>열의 갯수<input type="number" id="row" /></div>
+      <div>열의 갯수<input type="number" id="col" /></div>
       <div><input type="button" value="계산하기" onclick="calc()" /></div>
       <div><input type="button" value="다시하기" onclick="location.reload()" /></div>
     </form>
     <hr />
-    <div class="demo"></div>
+    <div class="demo" name="demo" id="demo"></div>
   </div>
 </body>
 </html>
