@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t13_날짜함수.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    let cnt = 0;
+
+    //오늘날짜 : Date() 자바에서는 new 붙이고 심플데이터 포맷 같은거 써야됨
+    //객체로 봐서 생성해야됨
+    const today = new Date();
+    // 객체에서 가져오나??
+    const year = today.getFullYear(); //연도 4자리
+    const month = today.getMonth()+1; //월이 하나 적게 나오기 때문에 +1 자바랑 같다
+    const date = today.getDate(); //일
+    const hour = today.getHours(); //월
+    const minutes = today.getMinutes(); //분
+    const seconds = today.getSeconds(); //초
+    const yymmdd = year + "." + month + "." + date + "." + hour + "." + minutes + "." + seconds;
+    
+    console.log(++cnt, " : ", today);
+    console.log(++cnt, " : ", year);
+    console.log(++cnt, " : ", month);
+    console.log(++cnt, " : ", date);
+    console.log(++cnt, " : ", hour);
+    console.log(++cnt, " : ", minutes);
+    console.log(++cnt, " : ", seconds);
+    console.log(++cnt, " : ", yymmdd);
+    
+    let weekStr = today.getDay(); //요일
+    
+    console.log(++cnt, " : ",weekStr); //일요일이 0 월 1 화2 수 3 ....
+    // 배열로 만들어주면 좋다
+    let week = ['일', '월', '화', '수', '목', '금', '토'];
+    console.log(++cnt, " : ", week[weekStr] + '요일');
+
+    //해당월의 마지막 일자
+    let lastDate = new Date(2024, 9, 0); //2024년 10월 마지막날짜 위에서 월에 더해줬기 때문에 9로  0부터시작
+    console.log("10월의 마지막 날 : ", lastDate);
+    //4로 나눠떨어지면 윤년의 가능성
+    //100으로 나눠 떨어지면 평년의 가능성
+    //400으로 나눠떨어지면 윤년?
+    //24년 윤년
+
+    function dateCheck() {
+      
+    }
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>날짜함수 연습</h2>
+    <form name="myform">
+      <div class="mb-2"> 년도
+        <input type="number" name="yy" id="yy" value="2024" class="form-control" autofocus />
+      </div>
+      <div class="mb-2"> 월
+        <input type="number" name="mm" id="mm" value="10" class="form-control" />
+      </div>
+      <div class="mb-2">
+        <input type="button" onclick="dateCheck()" value="마지막일자출력" class="btn btn-success" />
+      </div>
+    </form>
+    <hr />
+    <div id="demo"></div>
+  </div>
+</body>
+</html>
