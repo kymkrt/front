@@ -3,25 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>basic.html</title>
+  <title>t15_setInterval.html</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     'use strict'
+    
+    //콜백함수 익명 함수 만드는거랑 똑같이 만듬
+    //셋인터벌이 작동할때 작동할 내용
+    // setInterval(function() {
+    //   console.log("setInterval함수");
+    //   //1000분의 1초 기준
+    // }, 1000);
 
-
+    //람다식
+    setInterval(() => console.log("setInterval함수"), 1000);
 
   </script>
 </head>
 <body>
   <p><br /></p>
   <div class="container">
-    <h2></h2>
-    <div>
-
-    </div>
+    <h2>setInterval 함수</h2>
+    - 지정한 주기로 특정 코드를 계속해서 실행처리 한다.(clearInterval()을 만나면 종료)
   </div>
 </body>
 </html>

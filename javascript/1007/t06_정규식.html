@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t06_정규식.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="t06.js"></script>
+  <script>
+    'use strict';
+
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>정규식(Regular Expression) 연습</h2>
+    <form name="myform">
+      <div>
+        문자열 : 
+        <p><input type="text" name="content" id="content" autofocus required /></p>
+        <!-- <p><textarea name="content" id="content" rows="5" autofocus required class="form-control" ></textarea></p> -->
+        <p><input type="button" value="정규식 체크" onclick="regCheck()" class="btn btn-success" /></p>
+        <p><input type="reset" value="다시입력" class="btn btn-warning" /></p>
+      </div>
+    </form>
+    <pre>
+    형식 : /~~~~/플러그인,/[]/플러그인
+    플러그인 : g(global) - 전체범위
+              m(multi line) - 여러줄에 걸쳐서 처리(textarea)
+              s(single line) - 한줄에 걸쳐서 처리(text) 기본값으로 생략한다
+              i - 영문대소문자 구별하지 않을경우
+              u - 유니코드 구별처리시 사용
+    정규식을 실행하기 위해서 사용하는 함수 : 
+    1. 사용자입력문자열.match(정규표현식)
+    2. 정규표현식변수.test(사용자입력문자열)
+  </pre>
+  </div>
+</body>
+</html>

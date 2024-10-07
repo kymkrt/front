@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t01_클래스.html</title>
+  <script>
+    'use strict'
+
+    //클래스 만들기
+    // 퍼블릭 프라이베이트 2종류만 있다 안쓰면 기본 퍼블릭
+    class Member {
+      //필드명
+      name;
+      age;
+
+      //생성자. 예약어 construct를 쓴다 이러면 기본 생성자
+      // 자바스크립트는 생성자가 한개만 생성가능
+      // constructor() {}
+
+
+      //사용자 정의 생성자 (필드 초기화 등)
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+
+      //메소드. 함수개념
+      memberPrint() {
+        let job = '학생';
+        console.log("성명 : "+this.name, " 나이 : "+this.age +" 직업 : "+job);
+      }
+
+    }
+
+    //클래스호출
+    let member = new Member("홍길동", 25);
+
+    console.log("성명 : "+ member.name + " , "+" 나이 : "+member.age);
+    // 함수니까 괄호 필수
+    member.memberPrint();
+  </script>
+</head>
+<body>
+  <h2>클래스 연습</h2>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t04_상속.html</title>
+  <script src="t04.js"></script>
+
+</head>
+<script>
+  'use strict'
+
+  //익명클래스 같은것 생성하면서 바로 쓰는거?
+  let member = new Member("김말숙", 19, "빨강");
+  // console.log("member : "+member); 이게 왜 안될까
+  console.log("member.name : " + member.name);
+  console.log("member.age : " + member.age);
+  console.log("member.color : " + member.color);
+
+  //상속 : extends
+  class ChildMember extends Member {}
+  
+  let childMember = new ChildMember("소나무", 100, "검정");
+  // 자기안에 없는데도 상속받아서 값을 넣음
+  console.log("childMember : ",childMember); //자기안에 있는것 생성? 호출?
+  console.log("childMember.name : ",childMember.name);
+  console.log("childMember.age : ",childMember.age);
+  console.log("childMember.color : ",childMember.color);
+</script>
+<body>
+  <h2>상속</h2>
+</body>
+</html>

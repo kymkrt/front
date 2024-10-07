@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t17_animation.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    #content {
+      width: 400px;
+      height: 400px;
+      /* 부모는 릴레이티브 */
+      position: relative;
+      background-color: aqua;
+    }
+    
+    #circle {
+      width: 50px;
+      height: 50px;
+      /* 50% 완벽한 원 */
+      border-radius: 50%;
+      /* 자식은 앱솔루트 */
+      position: absolute;
+      background-color: red;
+    }
+  </style>
+  <script>
+    'use strict'
+
+    function myMove() {
+      let id = null;
+      let elem = document.getElementById("circle");
+      let pos = 0;
+
+      //인터벌이나 타임아웃 쓰기전에 클리어 해준다
+      clearInterval(id);
+      //앞에가 콜백함수 뒤에가 지연시간
+      id = setInterval(moving, 5);
+
+      function moving() {
+        if(pos == 350) clearInterval(id);
+        else {
+          pos++;
+          elem.style.left = pos + 'px';
+          elem.style.top = pos + 'px';
+        }
+      }
+    }
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>애니메이션 연습</h2>
+    <!-- 폼태그 없을때는 타입 생략가능 그때는 온클릭만 한다 -->
+    <p><button type="button" onclick="myMove()" class="btn btn-success btn-small">동작</button></p>
+    <div id="content">
+      <div id="circle"></div>
+    </div>
+  </div>
+</body>
+</html>

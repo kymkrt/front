@@ -68,7 +68,4 @@ tels.forEach((tel) => {console.log(`tel : ${tel}`)});
 // 인자 갯수와 종류
 tels.forEach((tel, idx)=>{console.log(title[idx], " : ",tel);});
 
-
-
-
 demo.innerHTML = res;

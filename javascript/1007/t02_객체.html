@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t02_객체.html</title>
+</head>
+<script>
+  'use strict'
+
+  //클래스하고는 좀 다른 개념
+  //객체 생성 : new 연산자
+  //객체를 생성만하면 안에 값들을 넣을수 있다?
+  let obj = new Object();
+  obj.name = "홍길동";
+  obj.age = 25;
+  obj.jumsu = [100,90,80];
+  obj.myFunc = function() {
+    console.log("성명 : ",this.name);
+  };
+
+  obj.myObj = {
+    tel : "010-1234-5678",
+    address : "청주시 사창동 그린컴퓨터"
+  }
+
+  //+로 하면 객체 내부 요소가 안나옴
+  console.log("obj객체 : ",obj);
+
+</script>
+<body>
+  <h2>객체 연습</h2>
+</body>
+</html>

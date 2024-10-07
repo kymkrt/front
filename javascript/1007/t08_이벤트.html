@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t08_이벤트.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 온로드 윈도우 창이 새로 뜨는것 -->
+  <script>
+    'use strict';
+
+    //새로고침 하면 바로뜸 이렇게 새창에 들어가면 바로 화면에 뜨는게 온로드
+    // alert("통과합니다");
+
+    function fCheck() {
+      alert("환영합니다");
+    }
+
+    function newWindow() {
+      // window.open("url","윈도우(창)의 이름","옵션");
+
+      let url = "https://www.naver.com";
+      let windowName = "newWindow"; //변수명이다 예약어 아님 식별자
+      let opt = "width=400px, height=350px, top=200px, left=100px";
+      // 여기 작동안함 이유 모름
+      opt +=  ', fullscreen=yes, scrolling=no, resizable=no';
+
+      window.open(url,windowName,opt);
+    }
+
+    function newWindow2() {
+      let url = "t08_child.html";
+      let windowName = "newWindow"; //변수명이다 예약어 아님 식별자
+      let opt = "width=400px, height=350px, top=200px, left=100px";
+      opt +=  ', fullscreen=yes, scrolling=no, resizable=no';
+
+      window.open(url,windowName,opt);
+    }
+
+  </script>
+</head>
+<!-- onunload는 막혀서 작동안됨  -->
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>새창 띄우기</h2>
+    <input type="button" value="새창띄우기" onclick="newWindow()" class="btn btn-success" />
+    <input type="button" value="새창띄우기2" onclick="newWindow2()" class="btn btn-primary" />
+  </div>
+</body>
+</html>

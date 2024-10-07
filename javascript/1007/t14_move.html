@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t14_move.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    #pop {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+      background-color: aqua;
+      /* 작으면 바닥(0) 크면 위 */
+      z-index: 99;
+    }
+
+  </style>
+  <script>
+    'use strict'
+
+    //마우스 좌표
+    let on = 0, mx, my;
+
+    function moveOnOff(e, sw) {
+      let pop = document.getElementById("pop");
+      //대소문자 구별
+      mx = e.clientX - pop.offsetLeft;
+      my = e.clientY - pop.offsetTop;
+      on = sw;
+    }
+    
+    function move(e) {
+      if(on == 0) return false;
+      let pop = document.getElementById("pop");
+      //대소문자 구별
+      let x = e.clientX - mx;
+      let y = e.clientY - my;
+
+      if(x>0) pop.style.left = x + "px";
+      if(y>0) pop.style.top = y + "px";
+    }
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <!-- event 예약어임 -->
+  <div id="pop" onmousedown="moveOnOff(event, 1)" onmouseup="moveOnOff(event, 0)" onmousemove="move(event)"></div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t11_마우스위치.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    // document.onclick() 이렇게 쓰면 함수
+    // document.onclick 이렇게 쓰면 감지기
+
+    //함수명은 항상 사용하기 전에 넣어야 한다
+    //이벤트라 e
+    function mClick(e) {
+      // alert("클릭이벤트 발생")
+      let x = e.screenX; //이벤트가 발생했을때 현재 상황을 담고 있는 변수
+      let y = e.screenY;
+      
+      let str = '';
+      str += '발생한 이벤트 : ' + e.type + '<br />';
+      str += 'x 좌표 : ' + x + '<br />';
+      str += 'y 좌표 : ' + y + '<br />';
+
+      demo.innerHTML = str;
+
+      document.getElementById("demo").style.backgroundColor = '#fff';
+      document.getElementById("demo").style.color = '#000';
+    }
+
+    function mDblClick() {
+      //스타일 줄때는 다 써야한다
+      //자바스크립트에서는 - 아니고 카멜표기법 
+      document.getElementById("demo").style.backgroundColor = '#F00';
+      document.getElementById("demo").style.color = '#fff';
+    }
+
+    document.onclick = mClick;
+    //더블클릭
+    document.ondblclick = mDblClick;
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>마우스 위치 감지하기</h2>
+    <p>마우스를 클릭하면 현재 윈도우 좌표가 출력됩니다</p>
+    <hr />
+    <div id="demo"></div>
+  </div>
+</body>
+</html>

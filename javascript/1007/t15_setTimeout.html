@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t15_setTimeout.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict'
+    
+    //한번 호출해야한다
+    // setTimeout(() => console.log("setTimeout함수"), 1000);
+
+    let num = 0;
+    let statusTime;
+
+    function plus() {
+      //혹시 돌고 있으면 세운다 값이 바뀌진 않음 전역변수라
+      clearTimeout(statusTime);
+      num++;
+      // 한번 불러주면 계속 실행
+      statusTime = setTimeout(plus, 1000);
+
+      demo.innerHTML = num;
+    }
+
+    function minus() {
+      // clearTimeout(statusTime);
+      // 이렇게 호출해도 됨
+      stop();
+      num--;
+      statusTime = setTimeout(minus, 1000);
+      
+      demo.innerHTML = num;
+    }
+    
+    function stop() {
+      clearTimeout(statusTime);
+      
+    }
+
+    //셋인터벌을 쓰면 하자마자 증가함
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>setTimeout 함수</h2>
+    - 지정한 주기로 특정 코드를 계속해서 실행처리 한다.(clearTimeout()을 만나면 종료)
+    <p>
+      <input type="button" value="증가" onclick="plus()" class="btn btn-success" />
+      <input type="button" value="감소" onclick="minus()" class="btn btn-primary" />
+      <input type="button" value="정지" onclick="stop()" class="btn btn-danger" />
+    </p>
+    <hr />
+    <div id="demo"></div>
+  </div>
+</body>
+</html>
