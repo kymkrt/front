@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t03_selector_2.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 셀렉터= 자식셀렉터 태그셀렉터 등 -->
+  <script>
+    'use strict'
+
+    //콤마변환 함수
+    function numberWithCommas (num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+    }
+
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>상품가격 계산하기</h2>
+    <form id="myform">
+      <div>상품명
+        <input type="text" name="product" id="product" value="냉장고" autofocus class="form-control mb-3" />
+      </div>
+      <div>상품가격
+        <input type="number" name="price" id="price" value="1000" class="form-control mb-3" />
+      </div>
+      <div>구매수량
+        <input type="number" name="ea" id="ea" value="2" class="form-control mb-3" />
+      </div>
+      <div>
+        <!-- 온클릭 안하고 id 줌 아이디를 온클릭처럼 사용 -->
+        <input type="button" value="계산하기" id="calcBtn" class="btn btn-success form-control" />
+      </div>
+    </form>
+    <hr />
+    <div id="demo"></div>
+  </div>
+  <script>
+
+    //셀렉터로 이렇게 사용가능 같은이름으로 되어있는걸 한번에 불러오기 편하다
+    let productVar = document.querySelector("#product");
+    let priceVar = document.querySelector("#price");
+    let eaVar = document.querySelector("#ea");
+
+
+    // 감지기
+    calcBtn.addEventListener('click', function() {
+      // alert('안녕');
+      let product = productVar.value;
+      let price = priceVar.value;
+      let ea = eaVar.value;
+
+      if(price.trim() == '' || product.trim() == '' || ea.trim() == '') {
+        alert("상품명과 가격과 수량을 입력하세요");
+        productVar.select();
+        productVar.focus();
+        //false 생략가능 기본값임
+        return false;
+      }
+      else if(isNaN(price) || isNaN(ea)) {
+        alert("가격과 수량은 숫자로 입력해주세요");
+        priceVar.select();
+        priceVar.focus();
+        //false 생략가능 기본값임
+        return false;
+      }
+
+      let res = price * ea;
+      price = numberWithCommas(price);
+      res = numberWithCommas(res);
+
+      demo.innerHTML = `상품명 : ${product}/ 단가 : ${price}/ 수량 : ${ea}/ 가격 : ${res}`;
+    });
+  </script>
+</body>
+</html>

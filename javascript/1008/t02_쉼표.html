@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t02_쉼표.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict'
+
+    /*
+    function fCheck() {
+      let num = myform.su.value;
+      //                          ()는 그룹으로본다
+      num = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,","); //쉼표를 넣어주는 루틴
+      myform.su.value = num;
+    }
+    */
+
+    function fCheck() {
+      let num = myform.su.value;
+      num = numberWithCommas (num);
+      myform.su.value = num; //위 두줄을 합칠수도 있다
+      
+    }
+
+    //콤마변환 함수
+    function numberWithCommas (num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+    }
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>콤마 처리</h2>
+    <form id="myform">
+      수 : <input type="text" value="1000" name="su" id="su" autofocus />
+      <input type="button" value="계산" onclick="fCheck()" class="btn btn-success" />
+    </form>
+  </div>
+</body>
+</html>

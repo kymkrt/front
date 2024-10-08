@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t04_CSS.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict'
+
+    // $(function() {
+    // });
+    // JQuery를 ArrowFunction으로 표기
+    $(() => {
+      // 전체선택자
+      $('*').css({ //내용넣을때는 항상 중괄호
+        // 카멜스타일 전부 ''처리
+        fontSize: '12pt', //숫자하고 붙어나오는경우는 전부'' 
+        'color': 'gray'
+      });
+      //태그선택자.  선택자는 전부 ''아니면 ""
+      $("h2").css({
+        // 속성값은 전부 '' 필요
+        fontSize: '20pt',
+        backgroundColor: 'blue'
+      });
+
+      // 아이디 선택자
+      $("#user").css({
+        fontSize: '15pt',
+        // 마지막에, 써도 에러 안남
+        textDecoration: 'underline',
+      });
+
+      // CSS는 위치순서다 나중에 나온게 덮어쓰기 때문에 주의
+      
+      // 클래스 선택자
+      // 한줄일때는 {}생략가능한데 그때는 '' 해줘야하고 중간은 , 이다
+      $(".yeon").css('backgroundColor', 'pink');
+      
+      $(".test").css({
+        color: 'brown'
+      });
+      
+      $(".main").css({
+        color: 'white',
+        backgroundColor: 'green',
+      });
+
+      // 조합선택자 선택자 중간에 공백있으면 자손?
+      $("span.yeon").css({
+        backgroundColor: 'brown',
+        color: 'white',
+        textDecoration: 'underlin'
+      });
+
+      // 자손선택자 공백
+      $("div .main").css('color', 'red');
+
+      //형제 선택자 ,
+      $(".aa, .bb").css('fontStyle', 'italic'); //aa와 bb둘다
+
+    });
+
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>CSS 적용하기</h2>
+    <hr />
+    <p>작가 : <span id="user">김소월</span></p>
+    <div class="yeon">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실때에는</div>
+    <div>말 없이 고이 보내 드리오리다</div>
+    <div class="yeon">2연</div>
+    <div>영변에 <span class="main">약산</span> 진달래꽃</div>
+    <div><span class="test main">아름따다</span> 가실길에 <span class="aa">뿌리오리다</span></div>
+    <div class="yeon">3연</div>
+    <div>가시는 <span class="yeon">걸음걸음</span> 놓인 그 꽃을</div>
+    <div>사뿐이 <span class="test">즈려밟고</span> 가시옵소서</div>
+    <div class="yeon">4연</div>
+    <div>나보기가 <span class="aa">역겨워</span> <span class="main">가실때에는</span></div>
+    <div>죽어도 <span class="test">아니 눈물</span> 흘리오리다</div>
+    <div>The end.....</div>
+    <hr />
+    <div id="demo" class="bb">안녕하세요</div>
+  </div>
+</body>
+</html>

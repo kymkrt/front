@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t18_비동기callback.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    //한작업이 걸리는 시간동안 안쉬고 다른 작업을 하게 하는것 비동기식
+    'use strict'
+
+    function printProcess(print) {
+      console.log("동기식 출력");
+      console.log(print);
+      print();
+    }
+
+    //직접 콜백으로 부르기 애로우 펑션 가능
+    printProcess(() => console.log("안녕하세요"));
+    console.log("");
+
+    //비동기식 실습
+    console.log("출발1"); //동기식 들어가자마사 순차적
+    setTimeout(function() { //이건 애로우 펑션으로 바꿀줄 알아야한다
+      // 보통 서버처리에 쓴다
+      console.log("출발2 : 서버의 값을 가져와서 처리하는중");
+    }, 1000); //(콜백함수(없으면 만들어도됨), 지연시간)
+    //멈춘동안 3이 먼저
+    console.log("출발3"); //동기식
+    console.log("");
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>동기식(Synchronous Callback) / 비동기식(Asynchronous Callback)</h2>
+    <div></div>
+  </div>
+</body>
+</html>

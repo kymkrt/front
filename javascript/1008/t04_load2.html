@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t04_load2.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    //같은 결과를 가져오는 명령들 실무에서 뭘쓸지 모르기때문에 다 알아둬야함
+    // 아래 같은 방법들을 쓰기 싫다면 본문의 가장 마지막으로 스크립트를 빼서 본문이 먼저 올라가게 해야함
+    'use strict'
+
+      //본문의 내용(body태그 안의 내용)을 모두 로딩시킨 다음에 아래 내용을들을 처리 
+    // window.onload = function() {
+    // 이렇게 리스너로도 사용가능
+    // 리스너가 나올때는 무조건 ();로 끝
+    // window.addEventListener("load", function() {
+    //dom으로 쓰는법
+    window.addEventListener("DOMContentLoaded", function() {
+      let productVar = document.querySelector("#product");
+      let eaVar = document.querySelectorAll(".ea");
+      
+      
+      // 감지기
+      calcBtn.addEventListener('click', function() {
+        let product = productVar.value;
+        // 가져올 필요가 없다?
+        let ea = 0;
+        
+        if(product.trim() == '') {
+          alert("상품명을 입력하세요");
+          productVar.select();
+          productVar.focus();
+          //false 생략가능 기본값임
+          return false;
+        }
+        
+        //배열의 값을 꺼내야하니까 반복문 처리
+        for(let i=0;i<eaVar.length;i++) {
+          if(eaVar[i].value.trim() == "" || isNaN(eaVar[i].value)) {
+            alert("수량은 숫자만 입력하셔야 합니다.");
+            eaVar[i].select();
+            eaVar[i].focus();
+            return false;
+          }
+          // 갯수가 누적?
+          ea += Number(eaVar[i].value);
+        }
+        
+        
+        ea = numberWithCommas(ea);
+        
+        demo.innerHTML = `상품명 : ${product}/ 총수량 : ${ea}`;
+      });
+    });
+
+    //콤마변환 함수
+    function numberWithCommas (num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g,",");
+    }
+  </script>
+  <!-- dom 객체가 메모리에 올라가야 처리가 가능한데 바디에서 호출을 하면 바디가 실행이 안된 상황에서 호출을 하는거라 에러남
+    쿼리셀렉터 같은 부분이나 이벤트 리스너 같은곳에서 -->
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>상품가격 계산하기</h2>
+    <form id="myform">
+      <div>상품명
+        <input type="text" name="product" id="product" value="냉장고" autofocus class="form-control mb-3" />
+      </div>
+      <div>1. 구매수량
+        <input type="number" name="ea" id="ea" value="2" class="form-control mb-3 ea" />
+      </div>
+      <div>2. 구매수량
+        <input type="number" name="ea" id="ea" value="2" class="form-control mb-3 ea" />
+      </div>
+      <div>3. 구매수량
+        <input type="number" name="ea" id="ea" value="2" class="form-control mb-3 ea" />
+      </div>
+      <div>4. 구매수량
+        <input type="number" name="ea" id="ea" value="2" class="form-control mb-3 ea" />
+      </div>
+      <div>상품가격
+        <input type="number" name="price" id="price" value="1000" class="form-control mb-3" />
+      </div>
+      <div>
+        <!-- 온클릭 안하고 id 줌 아이디를 온클릭처럼 사용 -->
+        <input type="button" value="계산하기" id="calcBtn" class="btn btn-success form-control" />
+      </div>
+    </form>
+    <hr />
+    <div id="demo"></div>
+  </div>
+
+</body>
+</html>

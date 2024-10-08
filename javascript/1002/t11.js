@@ -48,7 +48,8 @@ res += ++cnt + ':' + text1.replace('ABC','opq') + '<br />';
 res += ++cnt + ':' + text2.replace('ABC','opq') + '<br />'; //처음 하나만 바꾼다
 res += ++cnt + ':' + text2.replaceAll('ABC','opq') + '<br />'; //다 바꾸려면 All을 붙여야한다
 res += ++cnt + ':' + text1.slice(5) + '<br />'; 
-res += ++cnt + ':' + text1.slice(5, 8) + '<br />'; //뒷번째 바로 앞까지
+res += ++cnt + ':51' + text1.slice(5, 8) + '<br />'; //뒷번째 바로 앞까지
+res += ++cnt + ':52' + text1.slice(-2) + '<br />'; //-면 뒤에서 부터
 // 'ABC'를 기준으로 자르고 나서 0번째 값을 알려줘
 res += ++cnt + ':' + text1.split('ABC')[0] + '<br />'; //자르고 앞의 값은 없기 때문에 아무것도 안나옴
 res += ++cnt + ':' + text1.split('ABC')[1] + '<br />'; 

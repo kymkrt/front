@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t05_반복문.html</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    //제이쿼리 당시는 애로우 평선 잘안쓰고 
+    // $(function() {}); 이걸 주로 썼다 유지보수할때 참고
+
+
+    $(() => {
+      let atom = $(".test").css('color', 'orange'); //제이쿼리에서는 css를 이렇게 변수에 넣을수 있다 lenth가 나옴 즉 배열로 들어간다
+      console.log(atom);
+
+      let first = atom[0];
+      console.log("first변수 : ",first);
+
+      // 재설정가능
+      $(first).css('fontSize','20pt'); // 변수는 '' 필요없다
+
+      //향상된 for문 in과 of
+      for(let a of atom){
+        console.log(a);
+      }
+      console.log("=================================");
+
+      //자바스크립트의 forEach(data, index, array이름) => JQuery에서는 each(인덱스, 데이터, array명(생략가능))
+      atom.each((index, data) => {
+        console.log("인덱스 :",index," 데이터 : ",data);
+      });
+
+      //atom의 인덱스 2번지의 배경색을 green으로 변경하시오
+      // each로만 인덱스 값을 꺼낼수 있다?
+      atom.each((i, d) => {
+        if(i == 2) $(d).css('backgroundColor','green');
+      })
+    });
+
+
+  </script>
+</head>
+<body>
+  <p><br /></p>
+  <div class="container">
+    <h2>CSS 적용하기</h2>
+    <hr />
+    <p>작가 : <span id="user">김소월</span></p>
+    <div class="yeon">1연</div>
+    <div>나보기가 <span class="test">역겨워</span> 가실때에는</div>
+    <div>말 없이 고이 보내 드리오리다</div>
+    <div class="yeon">2연</div>
+    <div>영변에 <span class="main">약산</span> 진달래꽃</div>
+    <div><span class="test main">아름따다</span> 가실길에 <span class="aa">뿌리오리다</span></div>
+    <div class="yeon">3연</div>
+    <div>가시는 <span class="yeon">걸음걸음</span> 놓인 그 꽃을</div>
+    <div>사뿐이 <span class="test">즈려밟고</span> 가시옵소서</div>
+    <div class="yeon">4연</div>
+    <div>나보기가 <span class="aa">역겨워</span> <span class="main">가실때에는</span></div>
+    <div>죽어도 <span class="test">아니 눈물</span> 흘리오리다</div>
+    <div>The end.....</div>
+    <hr />
+    <div id="demo" class="bb">안녕하세요</div>
+  </div>
+</body>
+</html>
