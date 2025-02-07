@@ -51,3 +51,21 @@ __이텔릭체__
     + 3단계
       + 4단계1
       + 4단계1
+     
+    [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Jeonhyeunmin)](https://github.com/anuraghazra/github-readme-stats)
+
+선그리기
+*** 
+--- 
+
+## 표연습
+---
+줄 맞춰주는게 보기 좋음 -이거 위는 th 아래는 td :이거 위치로 정렬 지정 
+|관계|성명|나이
+|:----|----:|:----:
+아버지|홍장군만세|59
+어머지|김말숙|55
+동생|홍기자|22
+*** 
+
+## 이미지연습
