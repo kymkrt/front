@@ -71,6 +71,32 @@ __이텔릭체__
 ## 이미지연습
 이건 소스안의 이미지 링크를 넣어준다
 ![alt적는곳](images/4.jpg)
+
+이미지주소 복사후 브라우저에 쳐서 들어간 뒤 그 링크를 여기 이미지에 넣어준다 
+![배경사진](https://cdn.imweb.me/upload/S202207202685e30f16e24/41f854bd38a2b.jpeg)
+
 <img src="images/4.jpg" width="200px" />
 
+소스 코드 올리는법- pre하고 code 하고 둘다 있어야 함
+<pre>
+<code>
+    public class BootSpringBootApplication {
+  public static void main(String[] args) {
+    System.out.println("Hello, Honeymon");
+  }
 
+}
+</code>    
+</pre>
+
+다 한줄씩 띄워야함
+> 안녕하세요 반갑습니다1.
+
+> 안녕하세요 반갑습니다2.
+
+> 안녕하세요 반갑습니다3.
+
+### 하이퍼링크
+---
+* 참조링크
+[네이버]: http://naver.com
